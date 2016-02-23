@@ -1,0 +1,294 @@
+@charset "utf-8";
+.logo {
+	padding:9px 0 0 0;
+}
+#myCarousel {
+	margin: 50px 0 0 0;
+}
+#navbar-collapse ul {
+	margin-top:0;
+}
+.item img {
+	margin: 0 auto;
+}
+.upmoder{	
+	width: 80px;
+	background-image: url(../img/发布down2.png);
+	height: 30px;
+	margin: 11px 0 0px 0;
+	font-family: "微软雅黑";
+	border: 0px;
+
+}
+.demo_line_02{
+	padding: 0 0 30px 0;
+    height: 1px;
+    border-top: 1px solid #999999;
+    width: 80%;
+    text-align: center;
+    
+    margin:0  auto;
+}
+.demo_line_02 span{
+    position: relative;
+    top: -11px;
+    background: #fff;
+    padding: 0 30px;
+    background-color: #DCDCDC;
+    font-size: 18px;
+    color: #333333;
+    font-family: "黑体";
+}
+.caption table{
+		width: 90%; 
+		position: absolute;
+		top: 58%; 
+		/*right: 41%;*/
+		color:#777777; 
+		font-size: 12px;
+}
+.userhead{
+	font-size: 14px;
+	padding: 0px 7px 0px 12px;
+	letter-spacing: 1px;
+	line-height: 0.8;
+}	
+.userhead table{
+	margin: 0px 0 10px 0;
+}
+.userhead table td{
+	background-color: ;
+}
+.userhead img{
+	padding: 0px 7px 8px 9px;
+}
+.btnstyle{
+
+	text-align: center;
+    margin:0  auto;
+}
+.tabcash a {
+	text-decoration:none;
+}	
+.moreBtn{
+	width: 250px;
+	background-image: url(../img/加载更多底图.png);
+	height: 50px;
+	font-size: 21px;
+	font-family: "微软雅黑";
+	border: 0px;
+	border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    margin:0 auto;
+}
+ .bottom {
+	padding: 15px 0;
+	text-align: center;
+	font-size: 12px;
+	background-color: #DCDCDC;
+	color: #999999;
+	height: 80px;
+}
+.view-first  {
+
+	position: relative;
+	display: block;
+	-moz-opacity:0.8;
+	-khtml-opacity:0.85;
+	Opacity:0.85;
+	Filter:alpha(opacity=85);
+	outline:none;
+   -webkit-transition: all 0.2s linear;
+   -moz-transition: all 0.2s linear;
+   -o-transition: all 0.2s linear;
+   -ms-transition: all 0.2s linear;
+   transition: all 0.2s linear;
+}
+.view-first:hover {
+	filter:alpha(opacity=100);
+	-moz-opacity:1;
+	-khtml-opacity:1;
+	opacity:1;
+   -webkit-transform: scale(1.1,1.1);
+   -moz-transform: scale(1.1,1.1);
+   -o-transform: scale(1.1,1.1);
+   -ms-transform: scale(1.1,1.1);
+   transform: scale(1.1,1.1);
+}
+.vss1{
+	 position: relative;
+	overflow:hidden;
+}
+.dropdown img{
+	margin: -5px 0 -2px 0;
+}
+.headertwo{
+	top: 57px;
+}
+.headertwo table{
+		width: 10%; 
+		position: absolute;
+		top: 18%; 
+		right: 75%;
+		/*right: 41%;*/
+		color:#777777; 
+		font-size: 12px;
+}
+.bianjiBtn{
+	width: 80px;
+	height: 28px;
+	background-image: url(../img/加载更多底图.png);
+	font-family: "微软雅黑";
+	border: 0px;
+    margin:0 auto;
+    font-size: 16px;
+}
+.bianjiBtn1{
+	float: right;
+	width: 80px;
+	height: 38px;
+	background-image: url(../img/加载更多底图.png);
+	font-family: "微软雅黑";
+	border: 0px;
+    margin:0 auto;
+    font-size: 16px;
+}
+.bgcolor{
+	background-color: #DCDCDC;
+}
+.arthor{
+	float: right;
+}
+.ziliaobtn{
+	width: 100px;
+	height: 34px;
+	background-image: url(../img/加载更多底图.png);
+	font-family: "微软雅黑";
+	border: 0px;
+    margin:0 auto;
+    font-size: 16px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.fenxiangbtn{
+	width: 80px;
+	height: 30px;
+	background-color: #555555;
+	float: right;
+	right: 10px;
+	font-family: "黑体";
+	font-size: 16px;
+	color: #F9F9F9;
+	border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    	border: 0px;
+}
+.zanbtn{
+	width: 80px;
+	height: 30px;
+	background-color: #555555;
+	float: right;
+	font-family: "黑体";
+	font-size: 16px;
+	color: #F9F9F9;
+	border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    	border: 0px;
+}
+.shoucangbtn{
+	right: 20px;
+	width: 80px;
+	height: 30px;
+	background-color: #555555;
+	float: right;
+	font-family: "黑体";
+	font-size: 16px;
+	color: #F9F9F9;
+	border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    	border: 0px;
+}
+.tijiaoplbtn{
+	background-color: #555555;
+	font-family: "黑体";
+	font-size: 16px;
+	color: #F9F9F9;
+	border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    	border: 0px;
+}
+.org_box{
+	
+	width: 670px;
+    height:80px;
+    line-height: 25px;
+    margin-bottom:30px; 
+    padding-left:2em;
+    border-color: #EBEBEB;
+    background:#FFFFFF; 
+    position:relative; 
+}
+.org_bot_cor{
+    /*width:0; 
+    height:0; 
+    font-size:0; 
+    border-width:15px; 
+    border-style:solid; 
+    border-color:#f3961c transparent transparent; 
+    _border-color:#f3961c white white; */
+    width: 0;
+    height: 0;
+    border-color: #EBEBEB;
+    border-top: 5px solid transparent;
+    border-right: 10px solid #FFFFFF;
+    border-bottom: 5px solid transparent;
+    overflow:hidden; 
+    position:absolute; 
+    left:-10px; 
+    bottom:50px;
+}
+/*没有小于768px，是因为Bootstrap3以移动端优先设计*/
+
+/*在小于480 像素的屏幕，微小屏幕，更低分辨率的手机*/
+@media (max-width: 479px) {
+	.caption table{
+		top: 58%; 	
+}
+.xs-hidden{
+	display: none;
+}
+#myCarousel {
+	margin: 50px 0 0 0;
+}
+.lunbo ol{
+	margin: 10px 0 0 0;
+}
+
+/*在480 和767 像素之间的屏幕里，超小屏幕，主要是手机*/
+@media (min-width: 480px) {
+.xs-hidden{
+	display: none;
+}
+/* 小屏幕（平板，大于等于768px） */
+@media (min-width: 768px) {
+
+/* 中等屏幕（桌面显示器，大于等于992px） */
+@media (min-width: 992px) {
+	
+
+/* 大屏幕（大桌面显示器，大于等于1200px） */
+@media (min-width: 1200px) {
+	
+}
