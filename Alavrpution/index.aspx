@@ -10,6 +10,30 @@
 		<link rel="stylesheet" href="css/bootstrap.css"/>
 		<link rel="stylesheet" href="css/style.css"/>
 		<link rel ="stylesheet" href="css/style_common.css" />
+        <script src="js/jquery.min.js" type="text/javascript"></script>
+         <script language="javascript" type="text/javascript">
+             window.onload = function ()//用window的onload事件，窗体加载完毕的时候
+             {
+                 //do something
+                
+             }
+             function login( name1, pwd1) {
+               //  var name = $("#username1").val();
+                 //alert(name);
+                 var name = $("#username").val();
+                 var pwd = $("#password").val();
+                 name1 = name;
+                 pwd1 = pwd
+                 var a = "<%=login("Admin","Admin123")%>";
+             }
+        </script>
+    
+         
+
+
+
+
+
 </head>
 	<body>
       <form id="form1" runat="server">
@@ -548,28 +572,29 @@
 	            </h4>
 	         </div>
 	         <div class="modal-body"  style="height: 450px;">
-	           <!--<font style="color: #777777;">邮箱</font>-->
+	           <!--<font style="color: #777777;">邮箱</font>--> 
 	            <label for="name" style="color: #555555;">邮箱</label>
-	    		<input type="text" class="form-control" placeholder="请输入邮箱">
+	    		<input id ="username" name="usernaem1" type="text" class="form-control" placeholder="请输入邮箱" runat="server">
 	    			
 	    		<label for="name" style="color: #555555; padding: 20px 0 0 0;">密码</label>
-	    		<input type="password"  class="form-control" placeholder="请输入密码">
+	    		<input id="password" name="password1" type="password"  class="form-control" placeholder="请输入密码" runat="server">
 	    		<a href="#" style="color: #555555; float: right; padding: 20px 0 0 0;">忘记密码</a>
-	    	<%--	<button type="button" class="btn btn-primary" style="background-color: #333333; margin: 60px 70px 80px 70px; width: 200px;height: 50px;">
+                 <div style="color:red"> 密码错误，请确认账号密码无误再试</div>
+	    		<button id="login1" type="button" class="btn btn-primary" style="background-color: #333333; margin: 60px 70px 80px 70px; width: 200px;height: 50px;" onclick="login()">
 	               登 &nbsp; 陆
-	            </button>--%>
-                
-
+	            </button>
+                 <%--<asp:Button ID="Login1" runat="server" class="btn btn-primary" Style="background-color: #333333; margin: 60px 70px 80px 70px; width: 200px; height: 50px;" Text="登   陆" OnClick="Login1_Click" />--%>
+                 
 	            <p align=center>没有账号？<a data-toggle="modal"  data-target="#Signup" href="#" style="font-size: 18px; color: #000000; ">去注册</a></p>
 	         </div>
 	         
 	      </div><!-- /.modal-content -->
-		</div><!-- /.modal --> 
+		</div><!-- /.modal -->
 	</div>
 		
 	<!--注册-->
 	<div class="modal fade" id="Signup" tabindex="-1" role="dialog"  aria-labelledby="myModalLabel" aria-hidden="true">
-	   <div class="modal-dialog" style="width: 380px;">
+	   <div class="modal-dialog" style="width: 380px;">   
 	      <div class="modal-content">
 	         <div class="modal-header" style="background-color: #101010;">
 	            <button style="color: #FFFFFF; font-size: 21px;" type="button" class="close" 
@@ -588,9 +613,11 @@
 	    		<input type="password"  class="form-control" placeholder="请输入您的昵称">	
 	    		<label for="name" style="color: #555555; padding: 20px 0 0 0;">密码</label>
 	    		<input type="password"  class="form-control" placeholder="请输入密码">
+	    
 	    		<button type="button" class="btn btn-primary" style="background-color: #333333; margin: 60px 70px 80px 70px; width: 200px;height: 50px;">
 	             注 &nbsp; 册
 	            </button>
+	           
 	         </div>
 	         
 	      </div><!-- /.modal-content -->
@@ -615,7 +642,7 @@
 	 			<hr style="height:1px;border:none;border-top:1px solid #C0C0C0;" />  
 	 			<label for="name" style="color: #555555;">上传说明</label>
 	 			<font><br>将模型、材质、贴图数据打包压缩成RAR文件，将RAR文件上传。</font>
-	 			<a href="#"><br><br>查看图文说明</a> 
+	 			<a href="#"><br><br>查看图文说明</a>
 	    
 	    		
 	            <!--<div class="form-group" style="padding: 20px 0 0 0;">

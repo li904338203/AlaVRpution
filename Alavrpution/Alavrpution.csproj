@@ -228,6 +228,7 @@
     <Content Include="js\bootstrap.js" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\bootstrap3.0.3.min.js" />
+    <Content Include="js\jquery.js" />
     <Content Include="js\jquery.min.js" />
     <Content Include="js\npm.js" />
     <Content Include="packages.config" />
@@ -246,7 +247,9 @@
     <Content Include="Scripts\jquery-ui-1.8.24.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="ViewSwitcher.ascx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <None Include="Scripts\_references.js" />
@@ -358,6 +361,10 @@
     <Content Include="Site.Master" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BLL\BAL.csproj">
+      <Project>{cc77c8ca-e574-434f-8749-b1117231135a}</Project>
+      <Name>BAL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DBUtility\DBUtility.csproj">
       <Project>{1dcfbe4d-f96f-4917-8d9b-a41af091e881}</Project>
       <Name>DBUtility</Name>

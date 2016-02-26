@@ -15,8 +15,27 @@ namespace Alavrpution
         }
         protected void Login1_Click(object sender, EventArgs e)
         {
-            DBUtility.ShowMessagae em = new DBUtility.ShowMessagae();
-            em.Show("请检查用户名和密码是否正确！！");
+            //DBUtility.ShowMessagae em = new DBUtility.ShowMessagae();
+            //em.Show("请检查用户名和密码是否正确！！");
+            Moder.User user = new Moder.User();
+            user.PassWord = "123";
+            user.UserName = "321";
+            string name = this.username.Value;
+            string pwd = this.password.Value;
+
+
+        }
+        public string login(string name, string pwd)
+        {
+            BLL.UserBLL a = new BLL.UserBLL();
+            Moder.User moder = new Moder.User();
+            moder.UserName = name;
+            moder.PassWord = pwd;
+
+            a.Login(moder);
+            return "";
+           
         }
     }
+   
 }

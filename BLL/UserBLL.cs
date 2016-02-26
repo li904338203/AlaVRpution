@@ -9,6 +9,7 @@ namespace BLL
     {
        DAL.UserDAL dal = new DAL.UserDAL();
 
+
        public bool Login(Moder.User model)
        {
            return dal.Login(model);
