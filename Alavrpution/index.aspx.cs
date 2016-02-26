@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
+
 namespace Alavrpution
 {
     public partial class index : System.Web.UI.Page
@@ -17,25 +18,26 @@ namespace Alavrpution
         {
             //DBUtility.ShowMessagae em = new DBUtility.ShowMessagae();
             //em.Show("请检查用户名和密码是否正确！！");
-            Moder.User user = new Moder.User();
-            user.PassWord = "123";
-            user.UserName = "321";
-            string name = this.username.Value;
-            string pwd = this.password.Value;
-
-
-        }
-        public string login(string name, string pwd)
-        {
             BLL.UserBLL a = new BLL.UserBLL();
             Moder.User moder = new Moder.User();
-            moder.UserName = name;
-            moder.PassWord = pwd;
+            moder.UserName = this.username.Value;
+            moder.PassWord = this.password.Value;
 
-            a.Login(moder);
-            return "";
-           
+            bool b = a.Login(moder);
+            if (b == true)
+            {
+                DBUtility.ShowMessagae em = new DBUtility.ShowMessagae();
+                em.Show("登陆成功！！");
+            }
+            else
+            {
+                DBUtility.ShowMessagae em = new DBUtility.ShowMessagae();
+                em.Show("请检查用户名和密码是否正确！！");
+            }
+
+
         }
+      
     }
    
 }

@@ -17,14 +17,10 @@
                  //do something
                 
              }
-             function login( name1, pwd1) {
+             function login() {
                //  var name = $("#username1").val();
                  //alert(name);
-                 var name = $("#username").val();
-                 var pwd = $("#password").val();
-                 name1 = name;
-                 pwd1 = pwd
-                 var a = "<%=login("Admin","Admin123")%>";
+                
              }
         </script>
     
@@ -579,11 +575,11 @@
 	    		<label for="name" style="color: #555555; padding: 20px 0 0 0;">密码</label>
 	    		<input id="password" name="password1" type="password"  class="form-control" placeholder="请输入密码" runat="server">
 	    		<a href="#" style="color: #555555; float: right; padding: 20px 0 0 0;">忘记密码</a>
-                 <div style="color:red"> 密码错误，请确认账号密码无误再试</div>
-	    		<button id="login1" type="button" class="btn btn-primary" style="background-color: #333333; margin: 60px 70px 80px 70px; width: 200px;height: 50px;" onclick="login()">
+                 <%--<div style="color:red"> 密码错误，请确认账号密码无误再试</div>--%>
+	    		<%--<button id="login1" type="button" class="btn btn-primary" style="background-color: #333333; margin: 60px 70px 80px 70px; width: 200px;height: 50px;" onclick="login()" runat="server">
 	               登 &nbsp; 陆
-	            </button>
-                 <%--<asp:Button ID="Login1" runat="server" class="btn btn-primary" Style="background-color: #333333; margin: 60px 70px 80px 70px; width: 200px; height: 50px;" Text="登   陆" OnClick="Login1_Click" />--%>
+	            </button>--%>
+                 <asp:Button ID="Login1" runat="server" class="btn btn-primary" Style="background-color: #333333; margin: 60px 70px 80px 70px; width: 200px; height: 50px;" Text="登   陆" OnClick="Login1_Click" />
                  
 	            <p align=center>没有账号？<a data-toggle="modal"  data-target="#Signup" href="#" style="font-size: 18px; color: #000000; ">去注册</a></p>
 	         </div>
