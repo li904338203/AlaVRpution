@@ -14,5 +14,14 @@ namespace BLL
        {
            return dal.Login(model);
        }
+
+       public bool Register(Moder.User moder)
+       {
+           return dal.Register(moder);
+       }
+       public bool SelectUserName(Moder.User moder)
+       {
+           return dal.SelectUserName(moder);
+       }
     }
 }

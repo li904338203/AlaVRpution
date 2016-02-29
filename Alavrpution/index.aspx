@@ -15,6 +15,7 @@
              window.onload = function ()//用window的onload事件，窗体加载完毕的时候
              {
                  //do something
+
                 
              }
              function login() {
@@ -33,7 +34,7 @@
 </head>
 	<body>
       <form id="form1" runat="server">
-		<nav class="navbar navbar-default navbar-fixed-top">
+		<div id="lgag" class="navbar navbar-default navbar-fixed-top"  runat="server">
 			<div class="container">
 				<div class="navbar-header">
 					<a href="#" class="navbar-brand logo "><img src="img/阿拉VRlogo.png" alt="阿拉VR"></a>
@@ -48,12 +49,47 @@
 						<!--<li><img src="img/发布up.png" style="width: 75px; height: 45px;padding: 16.0px 0 5px 0;"><span class="xs-hidden"></li>-->
 						<li class="hidden-xs"style="left:-20px;"><button data-toggle="modal"  data-target="#moderup"  class="upmoder"><font color="#EEEEEE" style=""> &nbsp; &nbsp; 发布</font></button> </li>
 						<li><a data-toggle="modal"  data-target="#Signup"  href="#" ><font style="font-weight:bold;font-style: inherit;">注册</font></a></li>
-						<li><a data-toggle="modal"  data-target="#Login" href="#"><font style="font-weight:bold;font-style:inherit;">登陆</font></a></li>
-						
+						<li><a data-toggle="modal"  data-target="#Login" href="#"><font style="font-weight:bold;font-style:inherit;">登陆</font></a></li>		
 					</ul>	
 				</div>
 			</div>
-		</nav>
+		</div>
+
+          <div id="lg" class="navbar navbar-default navbar-fixed-top" style="display:none" runat="server">
+			<div class="container">
+				<div class="navbar-header">
+					<a href="index.html" class="navbar-brand logo "><img src="img/阿拉VRlogo.png" alt="阿拉VR"></a>
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+				<div class="collapse navbar-collapse" id="navbar-collapse">
+					<ul class="nav navbar-nav navbar-right">
+						<!--<li><img src="img/发布up.png" style="width: 75px; height: 45px;padding: 16.0px 0 5px 0;"><span class="xs-hidden"></li>-->
+						<li class="hidden-xs"style="left:-20px;"><button data-toggle="modal"  data-target="#moderup" class="upmoder"><font color="#EEEEEE" style=""> &nbsp; &nbsp; 发布</font></button> </li>
+						<li class="dropdown"><a href="#" class="li dropdown-toggle" data-toggle="dropdown"><img src="img/用户头像1.png"  style="height:25px"/> &nbsp;<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
+							<ul class="dropdown-menu" role="menu">
+			                    <li><a href="centers.html">个人中心</a></li>
+			                    <li><a href="#">上传作品</a></li>
+			                    <li><a href="#">回到首页</a></li>
+                                 <%--<li><a><input type="button" name="Button" value="注 销"style="c" runat="server" ></a></li>--%>
+                                <li><a><asp:Button ID="zhuxiao" runat="server"  Style="border-left:0px;border-top:0px;border-right:0px;border-bottom:1px; background-color:transparent;border:0" Text="注 销" OnClick="zhuxiao_Click" /></a></li>
+                                 
+			                </ul>
+						
+						</li>
+					</ul>	
+					
+				</div>
+			</div>
+        </div>
+
+
+
+
+
 		<div id="myCarousel" class="carousel slide">
 			<ol class="carousel-indicators lunbo">
 				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -604,15 +640,16 @@
 	         <div class="modal-body"  style="height: 450px;">
 	           <!--<font style="color: #777777;">邮箱</font>-->
 	            <label for="name" style="color: #555555;">邮箱</label>
-	    		<input type="text" class="form-control" placeholder="请输入邮箱">
+	    		<input id="emil" name="emil1"  type="text" class="form-control" placeholder="请输入邮箱" runat="server">
 	    		<label for="name" style="color: #555555; padding: 20px 0 0 0;">昵称</label>
-	    		<input type="password"  class="form-control" placeholder="请输入您的昵称">	
+	    		<input id="uname" name="uname1" type="text"  class="form-control" placeholder="请输入您的昵称" runat="server">	
 	    		<label for="name" style="color: #555555; padding: 20px 0 0 0;">密码</label>
-	    		<input type="password"  class="form-control" placeholder="请输入密码">
+	    		<input id="pword" name="pword1" type="password"  class="form-control" placeholder="请输入密码" runat="server">
 	    
-	    		<button type="button" class="btn btn-primary" style="background-color: #333333; margin: 60px 70px 80px 70px; width: 200px;height: 50px;">
+	    	<%--	<button type="button" class="btn btn-primary" style="background-color: #333333; margin: 60px 70px 80px 70px; width: 200px;height: 50px;">
 	             注 &nbsp; 册
-	            </button>
+	            </button>--%>
+                  <asp:Button ID="Button1" runat="server" class="btn btn-primary" Style="background-color: #333333; margin: 60px 70px 80px 70px; width: 200px; height: 50px;" Text="注  册" OnClick="Register_Click" />
 	           
 	         </div>
 	         

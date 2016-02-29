@@ -21,14 +21,53 @@ namespace DAL
             myData.AddParameter("@name", model.UserName);
             myData.AddParameter("@pass", model.PassWord);
             string strsql = "SELECT UserName ,PassWord FROM [User] where UserName=@name and PassWord = @pass";
-           
             DataTable dt = myData.ExecuteDataSet(strsql).Tables[0];
             if (dt.Rows.Count < 1)
             {
                 return false;
             }
             else
+            {
+                return true;
+            }
+               
+        }
+        ///<summary>
+        ///用户注册
+        ///<summary>
+        public bool Register(Moder.User model)
+        {
+            myData.AddParameter("@Emil", model.UserEmil);
+            myData.AddParameter("@uname", model.UserName);
+            myData.AddParameter("@password", model.PassWord);
+            myData.AddParameter("@cteatTime", DateTime.Now);
+            string strsql = "insert into[User] (Username,UserEmil,Password,CteatTime)values(@uname,@Emil,@password,@cteatTime)";
+            int dt = myData.ExecuteNonQuery(strsql);
+            if (dt <= 0)
+            {
+                return false;
+            }
+            else
                 return true;
         }
+        ///<summary>
+        ///查询用户名和邮箱
+        ///<summary>
+        ///
+        public bool SelectUserName(Moder.User model)
+        {
+            myData.AddParameter("@name", model.UserName);
+            string strsql = "SELECT UserName from [User] where UserName=@name";
+            DataTable dt = myData.ExecuteDataSet(strsql).Tables[0];
+            if (dt.Rows.Count < 1)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+         
     }
 }
