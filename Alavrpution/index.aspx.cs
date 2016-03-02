@@ -5,6 +5,7 @@ using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data;
 
 
 namespace Alavrpution
@@ -17,11 +18,15 @@ namespace Alavrpution
             {
                 //从cookie中获取到Username
                 string str = Request.Cookies["userName"].Value;
+                //
 
                 this.lgag.Style.Add("display", "none");
                 this.lg.Style.Add("display", "block");
-                
+
             }
+          BLL.MOderBLL a = new BLL.MOderBLL();
+          DataSet da =   a.ModerSelect();
+
         }
         protected void Login1_Click(object sender, EventArgs e)
         {
@@ -100,6 +105,11 @@ namespace Alavrpution
                         {
                             DBUtility.ShowMessagae em = new DBUtility.ShowMessagae();
                             em.ShowLocation("注册成功！！");
+                            //创建cookie
+                            HttpCookie cokie = new HttpCookie("userName");
+                            cokie.Value = moder.UserName;
+                            cokie.Expires = DateTime.MaxValue;
+                            Response.Cookies.Add(cokie);
 
                         }
                         else

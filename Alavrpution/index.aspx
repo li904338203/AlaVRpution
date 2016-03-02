@@ -11,19 +11,7 @@
 		<link rel="stylesheet" href="css/style.css"/>
 		<link rel ="stylesheet" href="css/style_common.css" />
         <script src="js/jquery.min.js" type="text/javascript"></script>
-         <script language="javascript" type="text/javascript">
-             window.onload = function ()//用window的onload事件，窗体加载完毕的时候
-             {
-                 //do something
-
-                
-             }
-             function login() {
-               //  var name = $("#username1").val();
-                 //alert(name);
-                
-             }
-        </script>
+     
     
          
 
@@ -47,7 +35,7 @@
 				<div class="collapse navbar-collapse" id="navbar-collapse">
 					<ul class="nav navbar-nav navbar-right">
 						<!--<li><img src="img/发布up.png" style="width: 75px; height: 45px;padding: 16.0px 0 5px 0;"><span class="xs-hidden"></li>-->
-						<li class="hidden-xs"style="left:-20px;"><button data-toggle="modal"  data-target="#moderup"  class="upmoder"><font color="#EEEEEE" style=""> &nbsp; &nbsp; 发布</font></button> </li>
+						<li class="hidden-xs"style="left:-20px;"><%--<button data-toggle="modal"  data-target="#moderup"  class="upmoder"><font color="#EEEEEE" style=""> &nbsp; &nbsp; 发布</font></button> --%><input type="button" data-toggle="modal"  data-target="#moderup" class="upmoder" value=" &nbsp;&nbsp;发 布"></li>
 						<li><a data-toggle="modal"  data-target="#Signup"  href="#" ><font style="font-weight:bold;font-style: inherit;">注册</font></a></li>
 						<li><a data-toggle="modal"  data-target="#Login" href="#"><font style="font-weight:bold;font-style:inherit;">登陆</font></a></li>		
 					</ul>	
@@ -59,7 +47,7 @@
 			<div class="container">
 				<div class="navbar-header">
 					<a href="index.html" class="navbar-brand logo "><img src="img/阿拉VRlogo.png" alt="阿拉VR"></a>
-					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse"> 
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
@@ -68,7 +56,7 @@
 				<div class="collapse navbar-collapse" id="navbar-collapse">
 					<ul class="nav navbar-nav navbar-right">
 						<!--<li><img src="img/发布up.png" style="width: 75px; height: 45px;padding: 16.0px 0 5px 0;"><span class="xs-hidden"></li>-->
-						<li class="hidden-xs"style="left:-20px;"><button data-toggle="modal"  data-target="#moderup" class="upmoder"><font color="#EEEEEE" style=""> &nbsp; &nbsp; 发布</font></button> </li>
+						<li class="hidden-xs"style="left:-20px;"><input type="button" data-toggle="modal"  data-target="#moderup" class="upmoder" value=" &nbsp;&nbsp;发 布"> </li>
 						<li class="dropdown"><a href="#" class="li dropdown-toggle" data-toggle="dropdown"><img src="img/用户头像1.png"  style="height:25px"/> &nbsp;<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
 							<ul class="dropdown-menu" role="menu">
 			                    <li><a href="centers.html">个人中心</a></li>
@@ -152,202 +140,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-md-4 col-sm-6 col-xs-12" >
-						<div class="thumbnail ">
-							<div class="vss1">
-							<a href="display.html"><img class="carousel-inner view-first " src="img/作品封面图1.png" alt=""></a>
-							</div>
-							<div class="caption">
-								<table border="0" cellspacing="" cellpadding="">
-									<tr>
-										<td style="width: 8%;"><img src="img/阅读图标.png"></td><td style="width: 10%;">112</td>
-										<td style="width: 8%;"><img src="img/点赞.png"></td><td style="width: 10%;">58</td>
-										<td style="float: right;width: 18%;"><img style="" src="img/评论.png"></td><td style="width: 13%;"> &nbsp; 12</td>
-									</tr>
-								</table>
-							</div>
-							<div class="userhead">
-								<table>
-									<tr>
-										<td rowspan="2" style="width: 25%;"><img src="img/用户头像1.png" /></td>
-										<td><p style="font-size: 15px;font-style: normal;">The Dark KingHt...</p></td>
-										<td style="padding: 0 0 5px 0;"><img  src="img/被推荐图标.png"></td>
-									</tr>
-									<tr>
-										<td><p style="color: #999999;">by Adam mish</p></td>
-									</tr>
-								</table>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4 col-sm-6 col-xs-12" >
-						<div class="thumbnail">
-							<div class="vss1">
-							<img class="carousel-inner view-first" src="img/info2.jpg" alt="">
-							</div>
-							<div class="caption">
-								<table border="0" cellspacing="" cellpadding="">
-									<tr>
-										<td style="width: 8%;"><img src="img/阅读图标.png"></td><td style="width: 10%;">112</td>
-										<td style="width: 8%;"><img src="img/点赞.png"></td><td style="width: 10%;">58</td>
-										<td style="float: right;width: 18%;"><img style="" src="img/评论.png"></td><td style="width: 13%;">  &nbsp;12</td>
-									</tr>
-								</table>
-							</div>
-							<div class="userhead">
-								<table>
-									<tr>
-										<td rowspan="2" style="width: 25%;"><img src="img/用户头像1.png" /></td>
-										<td><p style="font-size: 15px;font-style: normal;">The Dark KingHt...</p></td>
-										<td style="padding: 0 0 5px 0;"><img  src="img/被推荐图标.png"></td>
-									</tr>
-									<tr>
-										<td><p style="color: #999999;">by Adam mish</p></td>
-									</tr>
-								</table>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4 col-sm-6 col-xs-12" >
-						<div class="thumbnail">
-							<div class="vss1">
-							<img class="carousel-inner view-first" src="img/作品封面图1.png" alt="">
-							</div>
-							<div class="caption">
-								<table border="0" cellspacing="" cellpadding="">
-									<tr>
-										<td style="width: 8%;"><img src="img/阅读图标.png"></td><td style="width: 10%;">112</td>
-										<td style="width: 8%;"><img src="img/点赞.png"></td><td style="width: 10%;">58</td>
-										<td style="float: right;width: 18%;"><img style="" src="img/评论.png"></td><td style="width: 13%;">  &nbsp;12</td>
-									</tr>
-								</table>
-							</div>
-							<div class="userhead">
-								<table>
-									<tr>
-										<td rowspan="2" style="width: 25%;"><img src="img/用户头像1.png" /></td>
-										<td><p style="font-size: 15px;font-style: normal;">The Dark KingHt...</p></td>
-										<td style="padding: 0 0 5px 0;"><img  src="img/被推荐图标.png"></td>
-									</tr>
-									<tr>
-										<td><p style="color: #999999;">by Adam mish</p></td>
-									</tr>
-								</table>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4 col-sm-6 col-xs-12" >
-						<div class="thumbnail">
-							<div class="vss1">
-							<img class="carousel-inner view-first" src="img/作品封面图1.png" alt="">
-							</div>
-							<div class="caption">
-								<table border="0" cellspacing="" cellpadding="">
-									<tr>
-										<td style="width: 8%;"><img src="img/阅读图标.png"></td><td style="width: 10%;">112</td>
-										<td style="width: 8%;"><img src="img/点赞.png"></td><td style="width: 10%;">58</td>
-										<td style="float: right;width: 18%;"><img style="" src="img/评论.png"></td><td style="width: 13%;">  &nbsp;12</td>
-									</tr>
-								</table>
-							</div>
-							<div class="userhead">
-								<table>
-									<tr>
-										<td rowspan="2" style="width: 25%;"><img src="img/用户头像1.png" /></td>
-										<td><p style="font-size: 15px;font-style: normal;">The Dark KingHt...</p></td>
-										<td style="padding: 0 0 5px 0;"><img  src="img/被推荐图标.png"></td>
-									</tr>
-									<tr>
-										<td><p style="color: #999999;">by Adam mish</p></td>
-									</tr>
-								</table>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4 col-sm-6 col-xs-12" >
-						<div class="thumbnail">
-							<div class="vss1">
-							<img class="carousel-inner view-first" src="img/作品封面图1.png" alt="">
-							</div>
-							<div class="caption">
-								<table border="0" cellspacing="" cellpadding="">
-									<tr>
-										<td style="width: 8%;"><img src="img/阅读图标.png"></td><td style="width: 10%;">112</td>
-										<td style="width: 8%;"><img src="img/点赞.png"></td><td style="width: 10%;">58</td>
-										<td style="float: right;width: 18%;"><img style="" src="img/评论.png"></td><td style="width: 13%;"> &nbsp; 12</td>
-									</tr>
-								</table>
-							</div>
-							<div class="userhead">
-								<table>
-									<tr>
-										<td rowspan="2" style="width: 25%;"><img src="img/用户头像1.png" /></td>
-										<td><p style="font-size: 15px;font-style: normal;">The Dark KingHt...</p></td>
-										<td style="padding: 0 0 5px 0;"><img  src="img/被推荐图标.png"></td>
-									</tr>
-									<tr>
-										<td><p style="color: #999999;">by Adam mish</p></td>
-									</tr>
-								</table>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4 col-sm-6 col-xs-12" >
-						<div class="thumbnail">
-							<div class="vss1">
-							<img class="carousel-inner view-first" src="img/作品封面图1.png" alt="">
-							</div>
-							<div class="caption">
-								<table border="0" cellspacing="" cellpadding="">
-									<tr>
-										<td style="width: 8%;"><img src="img/阅读图标.png"></td><td style="width: 10%;">112</td>
-										<td style="width: 8%;"><img src="img/点赞.png"></td><td style="width: 10%;">58</td>
-										<td style="float: right;width: 18%;"><img style="" src="img/评论.png"></td><td style="width: 13%;"> &nbsp; 12</td>
-									</tr>
-								</table>
-							</div>
-							<div class="userhead">
-								<table>
-									<tr>
-										<td rowspan="2" style="width: 25%;"><img src="img/用户头像1.png" /></td>
-										<td><p style="font-size: 15px;font-style: normal;">The Dark KingHt...</p></td>
-										<td style="padding: 0 0 5px 0;"><img  src="img/被推荐图标.png"></td>
-									</tr>
-									<tr>
-										<td><p style="color: #999999;">by Adam mish</p></td>
-									</tr>
-								</table>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4 col-sm-6 col-xs-12" >
-						<div class="thumbnail">
-							<div class="vss1">
-							<img class="carousel-inner view-first" src="img/作品封面图1.png" alt="">
-							</div>
-							<div class="caption">
-								<table border="0" cellspacing="" cellpadding="">
-									<tr>
-										<td style="width: 8%;"><img src="img/阅读图标.png"></td><td style="width: 10%;">112</td>
-										<td style="width: 8%;"><img src="img/点赞.png"></td><td style="width: 10%;">58</td>
-										<td style="float: right;width: 18%;"><img style="" src="img/评论.png"></td><td style="width: 13%;">  &nbsp;12</td>
-									</tr>
-								</table>
-							</div>
-							<div class="userhead">
-								<table>
-									<tr>
-										<td rowspan="2" style="width: 25%;"><img src="img/用户头像1.png" /></td>
-										<td><p style="font-size: 15px;font-style: normal;">The Dark KingHt...</p></td>
-										<td style="padding: 0 0 5px 0;"><img  src="img/被推荐图标.png"></td>
-									</tr>
-									<tr>
-										<td><p style="color: #999999;">by Adam mish</p></td>
-									</tr>
-								</table>
-							</div>
-						</div>
-					</div>
+					
 				</div>
 					<div  class="btnstyle"><button class="moreBtn"><font color="#EEEEEE">加载更多</font></button></div>
 					<div style="height: 50px;"></div>
@@ -650,7 +443,6 @@
 	             注 &nbsp; 册
 	            </button>--%>
                   <asp:Button ID="Button1" runat="server" class="btn btn-primary" Style="background-color: #333333; margin: 60px 70px 80px 70px; width: 200px; height: 50px;" Text="注  册" OnClick="Register_Click" />
-	           
 	         </div>
 	         
 	      </div><!-- /.modal-content -->
@@ -682,13 +474,16 @@
 			      <label class="sr-only" for="inputfile" >文件输入</label>
 			      <input type="file" id="inputfile">
 	  			</div>-->
-	           <button data-toggle="modal"  data-target="#moderup1"  type="file" class="btn btn-primary" style="background-color: #333333; margin: 60px 70px 80px 70px; width: 200px;height: 50px;">
+	           <%--<button data-toggle="modal"  data-target="#moderup1"  type="file" class="btn btn-primary" style="background-color: #333333; margin: 60px 70px 80px 70px; width: 200px;height: 50px;">
 	         选择模型文件
-	            </button>
+	            </button--%>>
+                 <%--<input data-toggle="modal"  data-target="#moderup1" type="type" name="name" value=" 选择模型文件" class="btn btn-primary" style="background-color: #333333; margin: 60px 70px 80px 70px; width: 200px;height: 50px;"/>--%>
+                 <asp:FileUpload ID="FileUpload1"  data-toggle="modal"  data-target="#moderup1"  runat="server" class="btn btn-primary" style="background-color: #333333; margin: 60px 70px 80px 70px; width: 200px;height: 50px;" />
 	         </div>
 	         
 	      </div><!-- /.modal-content -->
 		</div><!-- /.modal -->
+        
 	</div>
 	
 	
@@ -713,16 +508,16 @@
 				      <span class="sr-only">40% 完成</span>
 				   </div>
 				</div>
-	 			<label for="name" style="color: #555555;">作品名称</label>
-	 			<input type="text" class="form-control" placeholder="请输入作品名称">
-	 			<label for="name" style="color: #555555;"><br><br>作品说明</label>
-	 			<input type="text" class="form-control" placeholder="请输入作品说明" style="height: 80px;" rows="3">
-	    
-	    		
+	 			    <label for="name" style="color: #555555;">作品名称</label>
+	 			    <input type="text" class="form-control" placeholder="请输入作品名称">
+	 			    <label for="name" style="color: #555555;"><br><br>作品说明</label>
+	 		 	    <input type="text" class="form-control" placeholder="请输入作品说明" style="height: 80px;" rows="3">
+	            
+	    	 	
 	            
 	           <button type="button" class="btn btn-primary" style="background-color: #333333; margin: 60px 70px 80px 70px; width: 200px;height: 50px;">
 	         提交
-	            </button>
+	           </button>
 	         </div>
 	         
 	      </div><!-- /.modal-content -->
