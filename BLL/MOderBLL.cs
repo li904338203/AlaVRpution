@@ -12,5 +12,12 @@ namespace BLL
          public DataSet ModerSelect() {
              return dal.ModerSelect();
          }
+         public DataSet AuthorNameSet(int userid) {
+             return dal.AuthorNameSet(userid);
+         }
+         public DataSet AuthorImgSet(int userid)
+         {
+             return dal.AuthorImgSet(userid);
+         }
     }
 }

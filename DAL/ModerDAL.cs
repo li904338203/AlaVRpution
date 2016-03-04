@@ -16,11 +16,26 @@ namespace DAL
         ///</summary>
         public DataSet ModerSelect() 
         {
-            string strsql = "SELECT  ModerId  ,ModerName ,UploaderId,Recommend,Follow,ModerPath ,UploaderTime  ,IsRecommend  ,CommentNums FROM Moder";
+            string strsql = "SELECT  ModerId  ,ModerName ,UploaderId,Recommend,Follow,ModerPath ,UploaderTime  ,IsRecommend  ,dianzan,pinglun,CommentNums FROM Moder";
             DataSet da = myData.ExecuteDataSet(strsql);
            
           
              return da;
+        }
+        public DataSet AuthorNameSet(int userid) { 
+             myData.AddParameter("@userid",userid);
+             string strsqlname = "select UserName from [User] where UserID =@userid";
+           
+             DataSet da = myData.ExecuteDataSet(strsqlname);
+             return da;
+         }
+        public DataSet AuthorImgSet(int userid)
+        {
+            myData.AddParameter("@userid", userid);
+            
+            string strsqlimg = "select Images from UserDetails where UserId = @userid";
+            DataSet da = myData.ExecuteDataSet(strsqlimg);
+            return da;
         }
 
     }

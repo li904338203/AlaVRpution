@@ -111,37 +111,39 @@
 				<div class="demo_line_02">
 					<span>编辑推荐</span>
 				</div>
-				<div class="row">
-					<div class="col-md-4 col-sm-6 col-xs-12" >
-						<div class="thumbnail ">
-							<div class="vss1">
-							<a href="display.html"><img class="carousel-inner view-first " src="img/作品封面图1.png" alt=""></a>
+				        
+              <div class="row">
+				<div class="col-md-4 col-sm-6 col-xs-12" >
+					<div class="thumbnail ">
+						<div class="vss1">
+						<a href="display.html"><img id="ModerImg" class="carousel-inner view-first " src="" alt="" runat="server"/></a>
 							</div>
-							<div class="caption">
+						<div class="caption">
 								<table border="0" cellspacing="" cellpadding="">
 									<tr>
-										<td style="width: 8%;"><img src="img/阅读图标.png"></td><td style="width: 10%;">112</td>
-										<td style="width: 8%;"><img src="img/点赞.png"></td><td style="width: 10%;">58</td>
-										<td style="float: right;width: 18%;"><img style="" src="img/评论.png"></td><td style="width: 10%;">12</td>
+										<td style="width: 8%;"><img src="img/阅读图标.png"></td><td style="width: 10%;"><font id="follow" runat="server"></font></td>
+										<td style="width: 8%;"><img src="img/点赞.png"></td><td style="width: 10%;"><font id="dianzan" runat="server"></font></td>
+										<td style="float: right;width: 18%;"><img style="" src="img/评论.png"></td><td style="width: 10%;"><font id="pinglun" runat="server"></font></td>
 									</tr>
 								</table>
 							</div>
-							<div class="userhead" >
+							<div class="userhead">
 								<table>
 									<tr>
-										<td rowspan="2" style="width: 25%;"><img src="img/用户头像1.png" /></td>
-										<td><p style="font-size: 15px;font-style: normal;">The Dark KingHt...</p></td>
+										<td rowspan="2" style="width: 25%;"><img id="Authorimg" src="" runat="server" /></td>
+										<td><p style="font-size: 15px;font-style: normal;"><font id="ModerNane" runat="server"></font></p></td>
 										<td style="padding: 0 0 5px 0;"><img  src="img/被推荐图标.png"></td>
 									</tr>
 									<tr>
-										<td><p style="color: #999999; font-size: 13px;">作者： Adam mish</p></td>
+										<td><p style="color: #999999; font-size: 13px;">作者： <font id="Moderauthor" runat="server"></font></p></td>
 									</tr>
 								</table>
 							</div>
 						</div>
 					</div>
-					
 				</div>
+
+
 					<div  class="btnstyle"><button class="moreBtn"><font color="#EEEEEE">加载更多</font></button></div>
 					<div style="height: 50px;"></div>
 					<div class="demo_line_02">

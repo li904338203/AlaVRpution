@@ -126,6 +126,11 @@ namespace DBUtility
             sb.Append("</script>");
             System.Web.HttpContext.Current.Response.Write(sb.ToString());
         }
+        public void ModerReder() {
+            StringBuilder sb = new System.Text.StringBuilder();
+            sb.Append("");
+        
+        } 
 
     }
 }
