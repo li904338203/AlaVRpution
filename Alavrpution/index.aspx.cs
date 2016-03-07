@@ -8,12 +8,18 @@ using System.Web.UI.WebControls;
 using System.Data;
 
 
+
+
 namespace Alavrpution
 {
     public partial class index : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            if (!IsPostBack)
+                BindStudent();
+
             if (Request.Cookies["userName"] != null)
             {
                 //从cookie中获取到Username
@@ -28,62 +34,72 @@ namespace Alavrpution
             DataSet da = a.ModerSelect();
             
             //this.ModerImg.Src = da.Tables[1].ToString();
-            DataTable dt = da.Tables[0];
-            int row = dt.Rows.Count;
+            //DataTable dt = da.Tables[0];
+            //int row = dt.Rows.Count;
+    
+            ////this.ModerImg.Src =dt.Rows[5].ToString();
+            //foreach (DataRow dr in dt.Rows)
+            //{
+            //    for (int i = 0; i < dt.Columns.Count; i++)
+            //    {
+            //        if (i == 8)
+            //        {
+            //            this.dianzan.InnerText = dr[i].ToString();
+            //        }
+            //        if (i == 10)
+            //        {
+            //            this.pinglun.InnerText = dr[i].ToString();
+            //        }
 
-            //this.ModerImg.Src =dt.Rows[5].ToString();
-            foreach (DataRow dr in dt.Rows)
-            {
-                for (int i = 0; i < dt.Columns.Count; i++)
-                {
-                    if (i == 8)
-                    {
-                        this.dianzan.InnerText = dr[i].ToString();
-                    }
-                    if (i == 10)
-                    {
-                        this.pinglun.InnerText = dr[i].ToString();
-                    }
-
-                    if (i == 5)
-                    {
-                        this.ModerImg.Src = dr[i].ToString();
-                    }
-                    if (i == 4)
-                    {
-                        this.follow.InnerText = dr[i].ToString();
-                    }
-                    if (i == 3)
-                    {
+            //        if (i == 5)
+            //        {
+            //            this.ModerImg.Src = dr[i].ToString();
+            //        }
+            //        if (i == 4)
+            //        {
+            //            this.follow.InnerText = dr[i].ToString();
+            //        }
+            //        if (i == 3)
+            //        {
                         
-                    }
-                    if (i == 2)
-                    {
-                        int id = int.Parse(dr[i].ToString());
-                        DataSet author = a.AuthorNameSet(id);
-                        DataSet img = a.AuthorImgSet(id);
-                        DataTable dauthor = author.Tables[0];
-                        DataTable dimg = img.Tables[0];
-                        foreach (DataRow dit in dauthor.Rows)
-                        {
-                            this.Moderauthor.InnerText = dit[0].ToString();
-                            foreach (DataRow ditimg in dimg.Rows)
+            //        }
+            //        if (i == 2)
+            //        {
+            //            int id = int.Parse(dr[i].ToString());
+            //            DataSet author = a.AuthorNameSet(id);
+            //            DataSet img = a.AuthorImgSet(id);
+            //            DataTable dauthor = author.Tables[0];
+            //            DataTable dimg = img.Tables[0];
+            //            foreach (DataRow dit in dauthor.Rows)
+            //            {
+            //                this.Moderauthor.InnerText = dit[0].ToString();
+            //                foreach (DataRow ditimg in dimg.Rows)
 
-                            {
-                                this.Authorimg.Src = ditimg[0].ToString();
-                            }
-                        }
-                    }
-                    if (i == 1)
-                    {
-                        this.ModerNane.InnerText = dr[i].ToString();
-                    }
+            //                {
+            //                    this.Authorimg.Src = ditimg[0].ToString();
+            //                }
+            //            }
+            //        }
+            //        if (i == 1)
+            //        {
+            //            this.ModerNane.InnerText = dr[i].ToString();
+            //        }
                    
 
 
-                }
+            //    }
 
-            }
+            //}
+        }
+
+
+        private void BindStudent()
+        {
+            BLL.MOderBLL a = new BLL.MOderBLL();
+            DataSet da = a.ModerSelect();
+
+            this.Modertuiji.DataSource = da;
+            this.Modertuiji.DataBind();
         }
         protected void Login1_Click(object sender, EventArgs e)
         {

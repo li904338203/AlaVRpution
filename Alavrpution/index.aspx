@@ -11,7 +11,14 @@
 		<link rel="stylesheet" href="css/style.css"/>
 		<link rel ="stylesheet" href="css/style_common.css" />
         <script src="js/jquery.min.js" type="text/javascript"></script>
-     
+        <script  language="javascript">
+            <%--var a ="<% =getjs()%>";
+            console.log(a);--%>
+
+
+
+
+        </script>
     
          
 
@@ -112,43 +119,82 @@
 					<span>编辑推荐</span>
 				</div>
 				        
-              <div class="row">
-				<div class="col-md-4 col-sm-6 col-xs-12" >
-					<div class="thumbnail ">
-						<div class="vss1">
-						<a href="display.html"><img id="ModerImg" class="carousel-inner view-first " src="" alt="" runat="server"/></a>
+<%--                <asp:Repeater ID="Modertuiji" runat="server">
+
+                     <ItemTemplate>
+                         <div class="row">
+                        <div class="col-md-4 col-sm-6 col-xs-12" >
+							<div class="thumbnail">
+							<div class="vss1">
+							<img class="carousel-inner view-first" src="<%#Eval("ModerPath") %>" alt="">
 							</div>
-						<div class="caption">
-								<table border="0" cellspacing="" cellpadding="">
-									<tr>
-										<td style="width: 8%;"><img src="img/阅读图标.png"></td><td style="width: 10%;"><font id="follow" runat="server"></font></td>
-										<td style="width: 8%;"><img src="img/点赞.png"></td><td style="width: 10%;"><font id="dianzan" runat="server"></font></td>
-										<td style="float: right;width: 18%;"><img style="" src="img/评论.png"></td><td style="width: 10%;"><font id="pinglun" runat="server"></font></td>
-									</tr>
-								</table>
-							</div>
-							<div class="userhead">
-								<table>
-									<tr>
-										<td rowspan="2" style="width: 25%;"><img id="Authorimg" src="" runat="server" /></td>
-										<td><p style="font-size: 15px;font-style: normal;"><font id="ModerNane" runat="server"></font></p></td>
-										<td style="padding: 0 0 5px 0;"><img  src="img/被推荐图标.png"></td>
-									</tr>
-									<tr>
-										<td><p style="color: #999999; font-size: 13px;">作者： <font id="Moderauthor" runat="server"></font></p></td>
-									</tr>
-								</table>
+								<div class="caption">
+									<table border="0" cellspacing="" cellpadding="">
+										<tr>
+											<td style="width: 8%;"><img src="img/阅读图标.png"></td><td style="width: 10%;"><%#Eval("Follow") %></td>
+											<td style="width: 8%;"><img src="img/点赞.png"></td><td style="width: 10%;"><%#Eval("dianzan") %></td>
+											<td style="float: right;width: 18%;"><img style="" src="img/评论.png"></td><td style="width: 13%;"> &nbsp; <%#Eval("CommentNums") %></td>
+										</tr>
+									</table>
+								</div>
+								<div class="userhead">
+									<table>
+										<tr>
+											<td rowspan="2" style="width: 25%;"><img src="img/用户头像1.png" /></td>
+											<td><p style="font-size: 15px;font-style: normal;"><%#Eval("ModerName") %></p></td>
+											<td style="padding: 0 0 5px 0;"><img  src="img/被推荐图标.png"></td>
+										</tr>
+										<tr>
+											<td><p style="color: #999999;">by Adam mish</p></td>
+										</tr>
+									</table>
+								</div>
 							</div>
 						</div>
-					</div>
-				</div>
-
+                        </div>
+                        </ItemTemplate>
+                </asp:Repeater>--%>
+                <div class="row">
+                  <asp:Repeater ID="Modertuiji" runat="server">
+                     <ItemTemplate>  
+                        <div class="col-md-4 col-sm-6 col-xs-12" >
+							<div class="thumbnail">
+							<div class="vss1">
+							<img class="carousel-inner view-first" src="<%#Eval("ModerPath") %>" alt="">
+							</div>
+								<div class="caption">
+									<table border="0" cellspacing="" cellpadding="">
+										<tr>
+											<td style="width: 8%;"><img src="img/阅读图标.png"></td><td style="width: 10%;"><%#Eval("Follow") %></td>
+											<td style="width: 8%;"><img src="img/点赞.png"></td><td style="width: 10%;"><%#Eval("dianzan") %></td>
+											<td style="float: right;width: 18%;"><img style="" src="img/评论.png"></td><td style="width: 13%;"> &nbsp; <%#Eval("CommentNums") %></td>
+										</tr>
+									</table>
+								</div>
+								<div class="userhead">
+									<table>
+										<tr>
+											<td rowspan="2" style="width: 25%;"><img src="<%#Eval("Images") %>" /></td>
+											<td><p style="font-size: 15px;font-style: normal;"><%#Eval("ModerName") %></p></td>
+											<td style="padding: 0 0 5px 0;"><img  src="img/被推荐图标.png"></td>
+										</tr>
+										<tr>
+											<td><p style="color: #999999;"> by <%#Eval("UserName") %></p></td>
+										</tr>
+									</table>
+								</div>
+							</div>
+						</div>
+                      </ItemTemplate>
+                </asp:Repeater>
+              </div>
 
 					<div  class="btnstyle"><button class="moreBtn"><font color="#EEEEEE">加载更多</font></button></div>
 					<div style="height: 50px;"></div>
 					<div class="demo_line_02">
 					<span>最新作品</span>
 					</div>
+              
 					<div class="row">
 						<div class="col-md-4 col-sm-6 col-xs-12" >
 							<div class="thumbnail">

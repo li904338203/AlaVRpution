@@ -16,7 +16,7 @@ namespace DAL
         ///</summary>
         public DataSet ModerSelect() 
         {
-            string strsql = "SELECT  ModerId  ,ModerName ,UploaderId,Recommend,Follow,ModerPath ,UploaderTime  ,IsRecommend  ,dianzan,pinglun,CommentNums FROM Moder";
+            string strsql = "select Moder.ModerId  ,Moder.ModerName ,Moder.UploaderId,Moder.Recommend,Moder.Follow,Moder.ModerPath ,Moder.UploaderTime  ,Moder.IsRecommend  , Moder.dianzan,Moder.pinglun,Moder.CommentNums,dbo.[User].UserName,UserDetails.Images from Moder left join [User] on Moder.UploaderId=[User].UserID  left join UserDetails on  [User].UserID=UserDetails.UserId";
             DataSet da = myData.ExecuteDataSet(strsql);
            
           
