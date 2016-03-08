@@ -160,7 +160,7 @@
                         <div class="col-md-4 col-sm-6 col-xs-12" >
 							<div class="thumbnail">
 							<div class="vss1">
-							<img class="carousel-inner view-first" src="<%#Eval("ModerPath") %>" alt="">
+							<a href="display.aspx"><img class="carousel-inner view-first" src="<%#Eval("ModerPath") %>" alt=""></a>
 							</div>
 								<div class="caption">
 									<table border="0" cellspacing="" cellpadding="">
@@ -199,7 +199,7 @@
 						<div class="col-md-4 col-sm-6 col-xs-12" >
 							<div class="thumbnail">
 							<div class="vss1">
-							<img class="carousel-inner view-first" src="img/作品封面图1.png" alt="">
+							    <a href="display.aspx"><img class="carousel-inner view-first" src="img/作品封面图1.png" alt=""></a>
 							</div>
 								<div class="caption">
 									<table border="0" cellspacing="" cellpadding="">

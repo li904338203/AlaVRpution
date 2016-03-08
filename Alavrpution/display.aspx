@@ -14,10 +14,12 @@
 		<script src="js/bootstrap.js"></script>
 </head>
 <body>
-		<nav class="navbar navbar-default navbar-fixed-top">
+    <form id="form1" runat="server">
+		    
+		<div id="lgag" class="navbar navbar-default navbar-fixed-top"  runat="server">
 			<div class="container">
 				<div class="navbar-header">
-					<a href="index.html" class="navbar-brand logo "><img src="img/阿拉VRlogo.png" alt="阿拉VR"></a>
+					<a href="index.aspx" class="navbar-brand logo "><img src="img/阿拉VRlogo.png" alt="阿拉VR"></a>
 					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
@@ -27,12 +29,36 @@
 				<div class="collapse navbar-collapse" id="navbar-collapse">
 					<ul class="nav navbar-nav navbar-right">
 						<!--<li><img src="img/发布up.png" style="width: 75px; height: 45px;padding: 16.0px 0 5px 0;"><span class="xs-hidden"></li>-->
-						<li class="hidden-xs"style="left:-20px;"><button data-toggle="modal"  data-target="#moderup" class="upmoder"><font color="#EEEEEE" style=""> &nbsp; &nbsp; 发布</font></button> </li>
-						<li class="dropdown"><a href="#" class="li dropdown-toggle" data-toggle="dropdown"><img src="img/用户头像1.png"  style=""/> &nbsp;<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
+						<li class="hidden-xs"style="left:-20px;"><%--<button data-toggle="modal"  data-target="#moderup"  class="upmoder"><font color="#EEEEEE" style=""> &nbsp; &nbsp; 发布</font></button> --%><input type="button" data-toggle="modal"  data-target="#moderup" class="upmoder" value=" &nbsp;&nbsp;发 布"></li>
+						<li><a data-toggle="modal"  data-target="#Signup"  href="#" ><font style="font-weight:bold;font-style: inherit;">注册</font></a></li>
+						<li><a data-toggle="modal"  data-target="#Login" href="#"><font style="font-weight:bold;font-style:inherit;">登陆</font></a></li>		
+					</ul>	
+				</div>
+			</div>
+		</div>
+
+          <div id="lg" class="navbar navbar-default navbar-fixed-top" style="display:none" runat="server">
+			<div class="container">
+				<div class="navbar-header">
+					<a href="index.aspx" class="navbar-brand logo "><img src="img/阿拉VRlogo.png" alt="阿拉VR"></a>
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse"> 
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+				<div class="collapse navbar-collapse" id="navbar-collapse">
+					<ul class="nav navbar-nav navbar-right">
+						<!--<li><img src="img/发布up.png" style="width: 75px; height: 45px;padding: 16.0px 0 5px 0;"><span class="xs-hidden"></li>-->
+						<li class="hidden-xs"style="left:-20px;"><input type="button" data-toggle="modal"  data-target="#moderup" class="upmoder" value=" &nbsp;&nbsp;发 布"> </li>
+						<li class="dropdown"><a href="#" class="li dropdown-toggle" data-toggle="dropdown"><img src="img/用户头像1.png"  style="height:25px"/> &nbsp;<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
 							<ul class="dropdown-menu" role="menu">
 			                    <li><a href="centers.html">个人中心</a></li>
 			                    <li><a href="#">上传作品</a></li>
 			                    <li><a href="#">回到首页</a></li>
+                                 <%--<li><a><input type="button" name="Button" value="注 销"style="c" runat="server" ></a></li>--%>
+                                <li><a><asp:Button ID="zhuxiao" runat="server"  Style="border-left:0px;border-top:0px;border-right:0px;border-bottom:1px; background-color:transparent;border:0" Text="注 销" OnClick="zhuxiao_Click" /></a></li>
+                                 
 			                </ul>
 						
 						</li>
@@ -40,7 +66,7 @@
 					
 				</div>
 			</div>
-		</nav>
+        </div>
 
 			
 			<div class="carousel-inner">
@@ -145,7 +171,11 @@
 									
 								</tr>
 								<tr>
-									<td><button data-toggle="modal"  data-target="#author" class="ziliaobtn"><font color="#FFFFFF">资  &nbsp;料</font></button></td>
+									<td>
+                                        <%--<button data-toggle="modal"  data-target="#author" class="ziliaobtn"><font color="#FFFFFF">资  &nbsp;料</font></button>--%>
+
+                                        <input type="button" data-toggle="modal"  data-target="#author" class="ziliaobtn" color="#FFFFFF" value="&nbsp;资  &nbsp;料">
+									</td>
 								</tr>
 							</table>
 						</div>
@@ -181,7 +211,7 @@
 		<div class="bottom">
 					Copyright © 2016 阿拉VR alavr.com <span class="hidden-xs">|</span> <span class="hidden-lg"><br /></span>沪ICP备16000103号
 		</div>
-        <div class="modal fade" id="author" tabindex="-1" role="dialog"  aria-labelledby="myModalLabel" aria-hidden="true">
+         <div class="modal fade" id="author" tabindex="-1" role="dialog"  aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog" style="width: 380px;">
                 <div class="modal-content">
                     <div class="modal-header" style="background-color: #101010;">
@@ -223,86 +253,154 @@
 
                 </div><!-- /.modal-content -->
             </div><!-- /.modal -->
-            <!--上传文件-->
         </div>
-        <!--上传文件-->
-        <div class="modal fade" id="moderup" tabindex="-1" role="dialog"  aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog" style="width: 380px;">
-                <div class="modal-content">
-                    <div class="modal-header" style="background-color: #101010;">
-                        <button style="color: #FFFFFF; font-size: 21px;" type="button" class="close"
-                                data-dismiss="modal" aria-hidden="true">
-                            &times;
-                        </button>
-                        <h4 class="modal-title" id="myModalLabel" style="color: #FFFFFF;">
-                            上传模型文件
-                        </h4>
-                    </div>
-                    <div class="modal-body"  style="height: 450px;">
-                        <!--<font style="color: #777777;">邮箱</font>-->
-                        <label for="name" style="color: #555555;">支持的格式：.obj  .3mx</label>
-                        <hr style="height:1px;border:none;border-top:1px solid #C0C0C0;" />
-                        <label for="name" style="color: #555555;">上传说明</label>
-                        <font><br>将模型、材质、贴图数据打包压缩成RAR文件，将RAR文件上传。</font>
-                        <a href="#"><br><br>查看图文说明</a>
-
-
-                        <!--<div class="form-group" style="padding: 20px 0 0 0;">
-                        <label class="sr-only" for="inputfile" >文件输入</label>
-                        <input type="file" id="inputfile">
-                        </div>-->
-                        <button data-toggle="modal"  data-target="#moderup1"  type="file" class="btn btn-primary" style="background-color: #333333; margin: 60px 70px 80px 70px; width: 200px;height: 50px;">
-                            选择模型文件
-                        </button>
-                    </div>
-
-                </div><!-- /.modal-content -->
-            </div><!-- /.modal -->
-        </div>
-
-
-        <div class="modal fade" id="moderup1" tabindex="-1" role="dialog"  aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog" style="width: 380px;">
-                <div class="modal-content">
-                    <div class="modal-header" style="background-color: #101010;">
-                        <button style="color: #FFFFFF; font-size: 21px;" type="button" class="close"
-                                data-dismiss="modal" aria-hidden="true">
-                            &times;
-                        </button>
-                        <h4 class="modal-title" id="myModalLabel" style="color: #FFFFFF;">
-                            上传模型文件
-                        </h4>
-                    </div>
-                    <div class="modal-body"  style="height: 450px;">
-                        <!--<font style="color: #777777;">邮箱</font>-->
-                        <label for="name" style="color: #555555;">上传进度</label>
-                        <div class="progress">
-                            <div class="progress-bar" role="progressbar" aria-valuenow="60"
-                                 aria-valuemin="0" aria-valuemax="100" style="width: 80%; color: #000000;">
-                                <span class="sr-only">40% 完成</span>
-                            </div>
-                        </div>
-                        <label for="name" style="color: #555555;">作品名称</label>
-                        <input type="text" class="form-control" placeholder="请输入作品名称">
-                        <label for="name" style="color: #555555;"><br><br>作品说明</label>
-                        <input type="text" class="form-control" placeholder="请输入作品说明" style="height: 80px;" rows="3">
-
-
-
-                        <button type="button" class="btn btn-primary" style="background-color: #333333; margin: 60px 70px 80px 70px; width: 200px;height: 50px;">
-                            提交
-                        </button>
-                    </div>
-
-                </div><!-- /.modal-content -->
-            </div><!-- /.modal -->
-        </div>
-        <script>
+       	<!--登陆-->
+	<div class="modal fade" id="Login" tabindex="-1" role="dialog"  aria-labelledby="myModalLabel" aria-hidden="true">
+	   <div class="modal-dialog" style="width: 380px;">
+	      <div class="modal-content">
+	         <div class="modal-header" style="background-color: #101010;">
+	            <button style="color: #FFFFFF; font-size: 21px;" type="button" class="close" 
+	               data-dismiss="modal" aria-hidden="true">
+	                  &times;
+	            </button>
+	            <h4 class="modal-title" id="myModalLabel" style="color: #FFFFFF;">
+	               登 陆
+	            </h4>
+	         </div>
+	         <div class="modal-body"  style="height: 450px;">
+	           <!--<font style="color: #777777;">邮箱</font>--> 
+	            <label for="name" style="color: #555555;">邮箱</label>
+	    		<input id ="username" name="usernaem1" type="text" class="form-control" placeholder="请输入邮箱" runat="server">
+	    			
+	    		<label for="name" style="color: #555555; padding: 20px 0 0 0;">密码</label>
+	    		<input id="password" name="password1" type="password"  class="form-control" placeholder="请输入密码" runat="server">
+	    		<a href="#" style="color: #555555; float: right; padding: 20px 0 0 0;">忘记密码</a>
+                 <%--<div style="color:red"> 密码错误，请确认账号密码无误再试</div>--%>
+	    		<%--<button id="login1" type="button" class="btn btn-primary" style="background-color: #333333; margin: 60px 70px 80px 70px; width: 200px;height: 50px;" onclick="login()" runat="server">
+	               登 &nbsp; 陆
+	            </button>--%>
+                 <asp:Button ID="Login1" runat="server" class="btn btn-primary" Style="background-color: #333333; margin: 60px 70px 80px 70px; width: 200px; height: 50px;" Text="登   陆" OnClick="Login1_Click" />
+                 
+	            <p align=center>没有账号？<a data-toggle="modal"  data-target="#Signup" href="#" style="font-size: 18px; color: #000000; ">去注册</a></p>
+	         </div>
+	         
+	      </div><!-- /.modal-content -->
+		</div><!-- /.modal -->
+	</div>
+		
+	<!--注册-->
+	<div class="modal fade" id="Signup" tabindex="-1" role="dialog"  aria-labelledby="myModalLabel" aria-hidden="true">
+	   <div class="modal-dialog" style="width: 380px;">   
+	      <div class="modal-content">
+	         <div class="modal-header" style="background-color: #101010;">
+	            <button style="color: #FFFFFF; font-size: 21px;" type="button" class="close" 
+	               data-dismiss="modal" aria-hidden="true">
+	                  &times;
+	            </button>
+	            <h4 class="modal-title" id="myModalLabel" style="color: #FFFFFF;">
+	              注 册
+	            </h4>
+	         </div>
+	         <div class="modal-body"  style="height: 450px;">
+	           <!--<font style="color: #777777;">邮箱</font>-->
+	            <label for="name" style="color: #555555;">邮箱</label>
+	    		<input id="emil" name="emil1"  type="text" class="form-control" placeholder="请输入邮箱" runat="server">
+	    		<label for="name" style="color: #555555; padding: 20px 0 0 0;">昵称</label>
+	    		<input id="uname" name="uname1" type="text"  class="form-control" placeholder="请输入您的昵称" runat="server">	
+	    		<label for="name" style="color: #555555; padding: 20px 0 0 0;">密码</label>
+	    		<input id="pword" name="pword1" type="password"  class="form-control" placeholder="请输入密码" runat="server">
+	    
+	    	<%--	<button type="button" class="btn btn-primary" style="background-color: #333333; margin: 60px 70px 80px 70px; width: 200px;height: 50px;">
+	             注 &nbsp; 册
+	            </button>--%>
+                  <asp:Button ID="Button1" runat="server" class="btn btn-primary" Style="background-color: #333333; margin: 60px 70px 80px 70px; width: 200px; height: 50px;" Text="注  册" OnClick="Register_Click" />
+	         </div>
+	         
+	      </div><!-- /.modal-content -->
+		</div><!-- /.modal -->
+	</div>
+	<!--上传文件-->
+	<div class="modal fade" id="moderup" tabindex="-1" role="dialog"  aria-labelledby="myModalLabel" aria-hidden="true">
+	   <div class="modal-dialog" style="width: 380px;">
+	      <div class="modal-content">
+	         <div class="modal-header" style="background-color: #101010;">
+	            <button style="color: #FFFFFF; font-size: 21px;" type="button" class="close" 
+	               data-dismiss="modal" aria-hidden="true">
+	                  &times;
+	            </button>
+	            <h4 class="modal-title" id="myModalLabel" style="color: #FFFFFF;">
+	             上传模型文件
+	            </h4>
+	         </div>
+	         <div class="modal-body"  style="height: 450px;">
+	           <!--<font style="color: #777777;">邮箱</font>-->
+	            <label for="name" style="color: #555555;">支持的格式：.obj  .3mx</label>
+	 			<hr style="height:1px;border:none;border-top:1px solid #C0C0C0;" />  
+	 			<label for="name" style="color: #555555;">上传说明</label>
+	 			<font><br>将模型、材质、贴图数据打包压缩成RAR文件，将RAR文件上传。</font>
+	 			<a href="#"><br><br>查看图文说明</a>
+	    
+	    		
+	            <!--<div class="form-group" style="padding: 20px 0 0 0;">
+			      <label class="sr-only" for="inputfile" >文件输入</label>
+			      <input type="file" id="inputfile">
+	  			</div>-->
+	           <%--<button data-toggle="modal"  data-target="#moderup1"  type="file" class="btn btn-primary" style="background-color: #333333; margin: 60px 70px 80px 70px; width: 200px;height: 50px;">
+	         选择模型文件
+	            </button--%>>
+                 <%--<input data-toggle="modal"  data-target="#moderup1" type="type" name="name" value=" 选择模型文件" class="btn btn-primary" style="background-color: #333333; margin: 60px 70px 80px 70px; width: 200px;height: 50px;"/>--%>
+                 <asp:FileUpload ID="FileUpload1"  data-toggle="modal"  data-target="#moderup1"  runat="server" class="btn btn-primary" style="background-color: #333333; margin: 60px 70px 80px 70px; width: 200px;height: 50px;" />
+	         </div>
+	         
+	      </div><!-- /.modal-content -->
+		</div><!-- /.modal -->
+        
+	</div>
+	
+	
+	<div class="modal fade" id="moderup1" tabindex="-1" role="dialog"  aria-labelledby="myModalLabel" aria-hidden="true">
+	   <div class="modal-dialog" style="width: 380px;">
+	      <div class="modal-content">
+	         <div class="modal-header" style="background-color: #101010;">
+	            <button style="color: #FFFFFF; font-size: 21px;" type="button" class="close" 
+	               data-dismiss="modal" aria-hidden="true">
+	                  &times;
+	            </button>
+	            <h4 class="modal-title" id="myModalLabel" style="color: #FFFFFF;">
+	             上传模型文件
+	            </h4>
+	         </div>
+	         <div class="modal-body"  style="height: 450px;">
+	           <!--<font style="color: #777777;">邮箱</font>-->
+	            <label for="name" style="color: #555555;">上传进度</label>
+	          	<div class="progress">
+				   <div class="progress-bar" role="progressbar" aria-valuenow="60" 
+				      aria-valuemin="0" aria-valuemax="100" style="width: 80%; color: #000000;">
+				      <span class="sr-only">40% 完成</span>
+				   </div>
+				</div>
+	 			    <label for="name" style="color: #555555;">作品名称</label>
+	 			    <input type="text" class="form-control" placeholder="请输入作品名称">
+	 			    <label for="name" style="color: #555555;"><br><br>作品说明</label>
+	 		 	    <input type="text" class="form-control" placeholder="请输入作品说明" style="height: 80px;" rows="3">
+	            
+	    	 	
+	            
+	           <button type="button" class="btn btn-primary" style="background-color: #333333; margin: 60px 70px 80px 70px; width: 200px;height: 50px;">
+	         提交
+	           </button>
+	         </div>
+	         
+	      </div><!-- /.modal-content -->
+		</div><!-- /.modal -->
+	</div>	
+         <script>
             $(function () { $('.popover-show').popover('show'); });
             $(function () {
                 $('.popover-show').on('shown.bs.popover', function () {
                 })
             });
-   	</script>
+    	</script>
+        </form>
 	</body>
 </html>
