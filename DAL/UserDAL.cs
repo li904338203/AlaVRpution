@@ -68,6 +68,16 @@ namespace DAL
                 return true;
             }
         }
+        
+            public DataTable SelectUserName1(string UserName)
+        {
+            myData.AddParameter("@name",UserName);
+            string strsql = "SELECT UserID from [User] where UserName=@name";
+            DataTable dt = myData.ExecuteDataSet(strsql).Tables[0];
+            
+
+            return dt;
+        }
          
     }
 }

@@ -15,6 +15,7 @@ namespace Moder
         private string _UserName;
         private string _PassWord;
         private string _UserEmil;
+        public int _fenye;
 
         public int Id
         {
@@ -36,6 +37,11 @@ namespace Moder
             set {_UserEmil = value;}
             get { return _UserEmil; }
         }
+        public int fenye
+        {
+            set { _fenye = value; }
+            get { return _fenye; }
+         }
         #endregion
     }
 }

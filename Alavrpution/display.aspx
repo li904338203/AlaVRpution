@@ -81,7 +81,7 @@
 				<div class="htdiv1" style="height: 100px;"></div>
 				<div>
 					
-					<font style="font-size: 21px;color: #000000;font-family: '微软雅黑';">我的雕像</font>
+					<font id="name" style="font-size: 21px;color: #000000;font-family: '微软雅黑';" runat="server">我的雕像</font>
 				</div>
 				<div class="htdiv2" style="height: 20px;"></div>
 				<div class="row">
@@ -94,7 +94,7 @@
 								<a><span class="glyphicon glyphicon-resize-full aria-hidden="true"" style="top: -35px; right: -95%; color: #FFFFFF;"></span></a>
 						</div>	
 						<div>
-							<img src="img/收藏.png" /> <font>78</font> <img src="img/点击.png" /> <font>114</font> <button class="zanbtn glyphicon glyphicon-star">  赞</button> 
+							<img src="img/收藏.png" /> <font id="shoucang" runat="server">78</font> <img src="img/点击.png" /> <font id="dianji" runat="server">114</font> <button class="zanbtn glyphicon glyphicon-star">  赞</button> 
 							<button class="fenxiangbtn glyphicon glyphicon-share-alt">  分享</button>  
 							<button class="shoucangbtn glyphicon glyphicon-heart">  收藏</button> 
 						</div>
@@ -102,63 +102,42 @@
 							
 						</div>
 						<div style="height: 60px;">
-							<font style="font-family: '微软雅黑'; font-size: 18px ;font-style: initial; font-weight: 800;">评论：3</font>
+							<font id="pinglunnums" style="font-family: '微软雅黑'; font-size: 18px ;font-style: initial; font-weight: 800;" runat="server">评论：3</font>
 						</div>
 						<div>
 							<table border="0">
 								<tr>
-									<td rowspan="2" valign="top" ><img style="width: 50px; padding-top: 0; "  src="img/用户头像1.png " /></td>
-									<td style="padding:0 0 0 30px;" valign="top"><textarea rows="3" style="width: 670px; border-color: #EBEBEB;"></textarea></td>
+									<td rowspan="2" valign="top" ><img id="moderimg" style="width: 50px; padding-top: 0; "  src="img/用户头像1.png "  runat="server"/></td>
+									<td style="padding:0 0 0 30px;" valign="top"><textarea id="comneirong" rows="3" style="width: 670px; border-color: #EBEBEB;" runat="server"></textarea></td>
 								</tr>
 								<tr>
-									<td style="padding:0 0 0 30px;"><button class="tijiaoplbtn">提交评论</button></td>
+									<td style="padding:0 0 0 30px;">
+                                      <%--  <button class="tijiaoplbtn">提交评论</button>--%>
+                                        <asp:Button ID="Button2" class="tijiaoplbtn" runat="server" Text="提交评论" OnClick="Button2_Click" />
+									</td>
 								</tr>
 							</table>
 							
 							<hr style="height:1px;border:none;border-top:1px solid #C0C0C0;" />
+
+
+                            <asp:Repeater ID="Commet" runat="server">
+                                   <ItemTemplate>  
 							<table>
 								<tr>
-									<td valign="top"><img style="width: 50px; padding-top: 0; "  src="img/用户头像1.png " /></td>
+									<td valign="top"><img style="width: 50px; padding-top: 0; "  src="<%#Eval("Images") %>" /></td>
 									<td style="padding:0 0 0 30px;" valign="top">
 										<div class="org_box">
 											<span class="org_bot_cor"></span>
-											<font style="font-weight: 800;">lwp593<br></font>
-											这个作品很不错，具有代表性<br />
-											<font style="font-size: 8px; color: #ADADAD;">10 分钟前</font>
+											<font style="font-weight: 800;"><label id="commentname" runat="server"><%#Eval("UserName") %></label><br></font>
+											<label id="commentneirong" runat="server"><%#Eval("CommentContent") %></label><br />
+											<font style="font-size: 8px; color: #ADADAD;"><time id="shijian" runat="server"><%#Eval("CommentTime") %></time></font>
 										</div>
 									</td>
-								</tr>
-								<tr>
-									<td valign="top"><img style="width: 50px; padding-top: 0; "  src="img/用户头像1.png " /></td>
-									<td style="padding:0 0 0 30px;" valign="top">
-										<div class="org_box">
-											<span class="org_bot_cor"></span>
-											<font style="font-weight: 800;">原来是这样<br></font>
-											这个作品很不错，具有很好的观赏性<br />
-											<font style="font-size: 8px; color: #ADADAD;">1 小时前</font>
-										</div>
-									</td>
-								</tr>
-								<tr>
-									<td valign="top"><img style="width: 50px; padding-top: 0; "  src="img/用户头像1.png " /></td>
-									<td style="padding:0 0 0 30px;" valign="top">
-										<div class="org_box">
-											<span class="org_bot_cor"></span>
-											<font style="font-weight: 800;">孤独的狼<br></font>
-											这个作品很不错，具有很高领域价值0000000000000<br />
-											<font style="font-size: 8px; color: #ADADAD;">3 天前</font>
-										</div>
-									</td>
-								</tr>
-								<tr>
-									<td></td>
-									<td></td>
-								</tr>
-								<tr>
-									<td></td>
-									<td></td>
 								</tr>
 							</table>
+                                          </ItemTemplate>  
+                            </asp:Repeater>
 						</div>
 						</div>
 					</div>
@@ -166,8 +145,8 @@
 						<div style="background-color: #FFFFFF; width: 380px;">
 							<table  style="width: 220px; text-align: center;" border="0">
 								<tr>
-									<td rowspan="2" style="width: 20px;"><img style="width: 85px;" src="img/用户头像1.png"></td>
-									<td><font style="font-size: 16px;color: #737373">by</font><font style="font-size: 21px;font-style: normal;color: #222222;"><!--&nbsp; &nbsp;--> lwp539</font></td>
+									<td rowspan="2" style="width: 20px;"><img id="imgModer" style="width: 85px;" src="img/用户头像1.png" runat="server"></td>
+									<td><font style="font-size: 16px;color: #737373">by</font><font id="moderName" style="font-size: 21px;font-style: normal;color: #222222;" runat="server"><!--&nbsp; &nbsp;--> lwp539</font></td>
 									
 								</tr>
 								<tr>

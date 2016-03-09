@@ -157,10 +157,10 @@
                 <div class="row">
                   <asp:Repeater ID="Modertuiji" runat="server">
                      <ItemTemplate>  
-                        <div class="col-md-4 col-sm-6 col-xs-12" >
+                        <div id="ser1" class="col-md-4 col-sm-6 col-xs-12" runat="server" >
 							<div class="thumbnail">
 							<div class="vss1">
-							<a href="display.aspx"><img class="carousel-inner view-first" src="<%#Eval("ModerPath") %>" alt=""></a>
+							<a href="display.aspx?ModerId= <%#Eval("ModerId") %>"><img class="carousel-inner view-first" src="<%#Eval("ModerPath") %>" alt=""></a>
 							</div>
 								<div class="caption">
 									<table border="0" cellspacing="" cellpadding="">
@@ -188,8 +188,13 @@
                       </ItemTemplate>
                 </asp:Repeater>
               </div>
+                
 
-					<div  class="btnstyle"><button class="moreBtn"><font color="#EEEEEE">加载更多</font></button></div>
+					<div  class="btnstyle"><%--<button class="moreBtn"><font color="#EEEEEE">加载更多</font></button>--%>
+                         <input type="button" value="加载更多" class="moreBtn"  runat="server" onserverclick="zaijiemor_Click" />
+                       <%-- <asp:Button ID="Button2" runat="server" class="moreBtn" color="#EEEEEE"  Text="加载更多"  OnClick="zaijiemor_Click" />--%>
+
+					</div>
 					<div style="height: 50px;"></div>
 					<div class="demo_line_02">
 					<span>最新作品</span>
@@ -421,7 +426,11 @@
 							</div>
 						</div>
 					</div>
-				<div  class="btnstyle"><button class="moreBtn"><font color="#EEEEEE"">加载更多</font></button></div>
+				<div  class="btnstyle">
+                    <%--<button class="moreBtn"><font color="#EEEEEE"">加载更多</font></button>--%>
+                    <input type="button" value="加载更多" class="moreBtn"  runat="server" onserverclick="zaijiemor_Click"/>
+
+				</div>
 				<div style="height: 40px;"></div>
 				<div class="demo_line_02"></div>
 			</div>

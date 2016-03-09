@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+
 
 namespace Alavrpution
 {
@@ -20,8 +22,57 @@ namespace Alavrpution
 
                 this.lgag.Style.Add("display", "none");
                 this.lg.Style.Add("display", "block");
+                string moderid =   Request.QueryString["ModerId"];
+                int Intmoderid = Convert.ToInt32(moderid);
+                if (!IsPostBack) { 
 
+                    bindcomment(Intmoderid);
+                   }
+                BLL.MOderBLL a = new BLL.MOderBLL();
+                DataSet da = a.ModerSelectById(Intmoderid);
+               
+         
+            DataTable dt = da.Tables[0];
+            int row = dt.Rows.Count;
+    
+            //this.ModerImg.Src =dt.Rows[5].ToString();
+            foreach (DataRow dr in dt.Rows)
+            {
+                for (int i = 0; i < dt.Columns.Count; i++)
+                {
+                    if (i==1)
+	                {
+                        this.name.InnerText = dr[i].ToString();
+	                }
+                    if (i==8)
+                    {
+                        this.shoucang.InnerText = dr[i].ToString();
+                    }
+                    if (i==4)
+                    {
+                        this.dianji.InnerText = dr[i].ToString();
+                    }
+                    if (i==10)
+                    {
+                        this.pinglunnums.InnerText = "评论： " + dr[i].ToString();
+                    }
+                    if (i==12)
+                    {
+                        this.moderimg.Src = dr[i].ToString();
+                        this.imgModer.Src = dr[i].ToString();
+                    }
+                    if (i==11)
+                    {
+                        this.moderName.InnerText = dr[i].ToString();
+                    }
+                }
             }
+               
+
+
+               
+            }
+           
         }
         protected void Login1_Click(object sender, EventArgs e)
         {
@@ -120,6 +171,48 @@ namespace Alavrpution
         {
             Response.Cookies["userName"].Expires = DateTime.Now.AddMilliseconds(1);
             Response.Redirect(Request.Url.ToString());
+        }
+        public void bindcomment(int moderid) {
+            BLL.CommentBLL a = new BLL.CommentBLL();
+            DataSet da =  a.SelectComment(moderid);
+            this.Commet.DataSource = da;
+            this.Commet.DataBind();
+        
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            BLL.UserBLL b = new BLL.UserBLL();
+            Moder.Comment com = new Moder.Comment();
+            string Username = Request.Cookies["userName"].Value;
+            DataTable dt = b.SelectUserName1(Username);
+            foreach (DataRow dr in dt.Rows){
+               com.CommentUser=Convert.ToInt32( dr[0].ToString());
+            }
+
+            com.CommentContent = this.comneirong.InnerText.ToString();
+            com.CommentTime = DateTime.Now;
+            com.ModerId = Convert.ToInt32(Request.QueryString["ModerId"]);
+
+            BLL.CommentBLL c = new BLL.CommentBLL();
+            if (com.CommentContent==""||com.CommentContent==null)
+            {
+                  DBUtility.ShowMessagae em = new DBUtility.ShowMessagae();
+                em.ShowLocation("请输入你的意见后点击提交！！");
+            }else
+            { 
+            bool boo = c.InserComment(com);
+            if (boo==true)
+            {
+                DBUtility.ShowMessagae em = new DBUtility.ShowMessagae();
+                em.ShowLocation("添加成功！！");
+            }
+            else
+            {
+                DBUtility.ShowMessagae em = new DBUtility.ShowMessagae();
+                em.ShowLocation("服务器繁忙，请稍后重试！！");
+            }
+          }
         }
     }
 }

@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommentDAL.cs" />
     <Compile Include="ModerDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserDAL.cs" />

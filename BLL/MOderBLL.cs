@@ -19,5 +19,11 @@ namespace BLL
          {
              return dal.AuthorImgSet(userid);
          }
+         public DataSet ModerSelectFenye(int index) {
+             return dal.ModerSelectFenye(index);
+         }
+         public DataSet ModerSelectById(int ModerId) {
+             return dal.ModerSelectById(ModerId);
+         }
     }
 }

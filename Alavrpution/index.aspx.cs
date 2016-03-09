@@ -14,6 +14,7 @@ namespace Alavrpution
 {
     public partial class index : System.Web.UI.Page
     {
+       
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -98,6 +99,13 @@ namespace Alavrpution
             BLL.MOderBLL a = new BLL.MOderBLL();
             DataSet da = a.ModerSelect();
 
+            this.Modertuiji.DataSource = da;
+            this.Modertuiji.DataBind();
+        }
+        public void bindshuju(int index)
+        {
+            BLL.MOderBLL a = new BLL.MOderBLL();
+            DataSet da = a.ModerSelectFenye(index);
             this.Modertuiji.DataSource = da;
             this.Modertuiji.DataBind();
         }
@@ -199,5 +207,27 @@ namespace Alavrpution
             Response.Cookies["userName"].Expires = DateTime.Now.AddMilliseconds(1);
             Response.Redirect(Request.Url.ToString()); 
         }
+        protected void zaijiemor_Click(object sender, EventArgs e)
+        {
+            Moder.User use = new Moder.User();
+            int index = use.fenye;
+            BLL.MOderBLL a = new BLL.MOderBLL();
+            if (index > 9)
+            {
+                bindshuju(index + 9);
+                use.fenye = index;
+            }
+            else
+                index = index + 9;
+            use.fenye = index;
+                
+           
+               
+           
+          
+
+           
+        }
+      
     } 
 }
