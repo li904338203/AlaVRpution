@@ -14,7 +14,7 @@ namespace DAL
        public DataSet SelectComment( int ModerId){
            
            myData.AddParameter("@moderid",ModerId);
-           string strsql = "select  Comment.CommentId,Comment.CommentContent,Comment.CommentTime,Comment.ModerId,dbo.[User].UserName,UserDetails.Images from Comment left join [User] on Comment.CommentUser=[User].UserID  left join UserDetails on  [User].UserID=UserDetails.UserId where Comment.ModerId=@moderid";
+           string strsql = "select  Comment.CommentId,Comment.CommentContent,Comment.CommentTime,Comment.ModerId,dbo.[User].UserName,UserDetails.Images from Comment left join [User] on Comment.CommentUser=[User].UserID  left join UserDetails on  [User].UserID=UserDetails.UserId where Comment.ModerId=@moderid ORDER BY Comment.CommentTime desc";
            DataSet da = myData.ExecuteDataSet(strsql);
            return da;
        }

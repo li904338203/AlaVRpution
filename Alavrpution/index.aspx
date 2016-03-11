@@ -11,6 +11,7 @@
 		<link rel="stylesheet" href="css/style.css"/>
 		<link rel ="stylesheet" href="css/style_common.css" />
         <script src="js/jquery.min.js" type="text/javascript"></script>
+
         <script  language="javascript">
             <%--var a ="<% =getjs()%>";
             console.log(a);--%>

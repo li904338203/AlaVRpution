@@ -67,8 +67,51 @@ namespace Alavrpution
                     }
                 }
             }
-               
+            BLL.UserDateilsBLL userdateils = new BLL.UserDateilsBLL();
+             DataSet ds =  userdateils.SelectUserDateils(Intmoderid);
 
+             DataTable dtable = ds.Tables[0];
+             int row1 = dtable.Rows.Count;
+             foreach (DataRow dr in dtable.Rows)
+             {
+                 for (int i = 0; i < dtable.Columns.Count; i++)
+                 {
+                     if (i==1)
+                     {
+                         this.erweima1.Src = "  http://qr.liantu.com/api.php?text=http://localhost:5565/display.aspx?ModerId=" + dr[i].ToString();
+                     }
+                     if (i==2)
+                     {
+                         this.usernaem1.InnerText = dr[i].ToString();
+                         this.mian.InnerText = "alavr.com/" + dr[i].ToString();
+                        
+                     }
+                     if (i==3)
+                     {
+                         this.useremil.InnerText = dr[i].ToString();
+                     }
+                     if (i==4)
+                     {
+                         this.qq.InnerText = dr[i].ToString();
+                     }
+                     if (i==5)
+                     {
+                         this.city.InnerText = dr[i].ToString();
+                     }
+                     if (i==6)
+                     {
+                         this.UserImg.Src = dr[i].ToString();
+                     }
+                     if (i==7)
+                     {
+                         this.iphone.InnerText = dr[i].ToString();
+                     }
+                     if (i==8)
+                     {
+                         this.jianjie.InnerText = dr[i].ToString();
+                     }
+                 }
+             }
 
                
             }

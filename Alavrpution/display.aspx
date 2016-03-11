@@ -12,6 +12,7 @@
 		<link href="css/bootstrap.css" rel="stylesheet">
 		<script src="js/jquery.min.js"></script>
 		<script src="js/bootstrap.js"></script>
+   
 </head>
 <body>
     <form id="form1" runat="server">
@@ -53,9 +54,9 @@
 						<li class="hidden-xs"style="left:-20px;"><input type="button" data-toggle="modal"  data-target="#moderup" class="upmoder" value=" &nbsp;&nbsp;发 布"> </li>
 						<li class="dropdown"><a href="#" class="li dropdown-toggle" data-toggle="dropdown"><img src="img/用户头像1.png"  style="height:25px"/> &nbsp;<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
 							<ul class="dropdown-menu" role="menu">
-			                    <li><a href="centers.html">个人中心</a></li>
+			                    <li><a href="centers.aspx">个人中心</a></li>
 			                    <li><a href="#">上传作品</a></li>
-			                    <li><a href="#">回到首页</a></li>
+			                    <li><a href="index.aspx">回到首页</a></li>
                                  <%--<li><a><input type="button" name="Button" value="注 销"style="c" runat="server" ></a></li>--%>
                                 <li><a><asp:Button ID="zhuxiao" runat="server"  Style="border-left:0px;border-top:0px;border-right:0px;border-bottom:1px; background-color:transparent;border:0" Text="注 销" OnClick="zhuxiao_Click" /></a></li>
                                  
@@ -95,7 +96,10 @@
 						</div>	
 						<div>
 							<img src="img/收藏.png" /> <font id="shoucang" runat="server">78</font> <img src="img/点击.png" /> <font id="dianji" runat="server">114</font> <button class="zanbtn glyphicon glyphicon-star">  赞</button> 
-							<button class="fenxiangbtn glyphicon glyphicon-share-alt">  分享</button>  
+							 <%--<button data-toggle="modal"  data-target="#erweima" class="fenxiangbtn glyphicon glyphicon-share-alt">  分享</button>--%>
+                           <input type="button" data-toggle="modal"  data-target="#erweima" class="fenxiangbtn glyphicon glyphicon-share-alt"  value="分享">
+							
+                        
 							<button class="shoucangbtn glyphicon glyphicon-heart">  收藏</button> 
 						</div>
 						<div style="height: 30px;">
@@ -145,7 +149,7 @@
 						<div style="background-color: #FFFFFF; width: 380px;">
 							<table  style="width: 220px; text-align: center;" border="0">
 								<tr>
-									<td rowspan="2" style="width: 20px;"><img id="imgModer" style="width: 85px;" src="img/用户头像1.png" runat="server"></td>
+									<td rowspan="2" style="width: 20px;"><a href="centers.aspx"><img id="imgModer" style="width: 85px;" src="img/用户头像1.png" runat="server"></a></td>
 									<td><font style="font-size: 16px;color: #737373">by</font><font id="moderName" style="font-size: 21px;font-style: normal;color: #222222;" runat="server"><!--&nbsp; &nbsp;--> lwp539</font></td>
 									
 								</tr>
@@ -205,21 +209,21 @@
                     <div class="modal-body"  style="height: 600px;">
                         <!--<font style="color: #777777;">邮箱</font>-->
                         <div style=" text-align: center ;">
-                            <img style="width: 90px; height: 90px;margin: 20px 120px 10px 120px;" src="img/用户头像1.png" />
-                            <label for="name" style="color: #999999;">李文平</label>
+                            <img id="UserImg" style="width: 90px; height: 90px;margin: 20px 120px 10px 120px;" src="img/用户头像1.png"  runat="server"/>
+                            <label id="usernaem1" for="name" style="color: #999999;" runat="server">李文平</label>
                         </div>
                         <div>
-                            <font for=""> &nbsp;&nbsp;&nbsp;&nbsp;联系电话：</font> <label align=center><font align=center>1312224445</font></label>
+                            <font for=""> &nbsp;&nbsp;&nbsp;&nbsp;联系电话：</font> <label align=center><font id="iphone" align=center runat="server">1312224445</font></label>
                             <hr style="height:0px;border: none;border-top:1px solid #C0C0C0; margin: 10px auto;margin-left: 13px; " />
-                            <font for=""> &nbsp;&nbsp;&nbsp;&nbsp;邮箱：</font><label> 1312221424@11.com</label>
+                            <font for=""> &nbsp;&nbsp;&nbsp;&nbsp;邮箱：</font><label id="useremil" runat="server"> 1312221424@11.com</label>
                             <hr style="height:0px;border:none;border-top:1px solid #C0C0C0; margin: 10px auto; margin-left: 13px;" />
-                            <font for="">&nbsp;&nbsp;&nbsp;&nbsp;个人主页：</font> <label>alavr.com/13124474</label>
+                            <font for="">&nbsp;&nbsp;&nbsp;&nbsp;个人主页：</font> <label id="mian" runat ="server">alavr.com/13124474</label>
                             <hr style="height:0px;border:none;border-top:1px solid #C0C0C0; margin: 10px auto; margin-left: 13px;" />
-                            <font for=""> &nbsp;&nbsp;&nbsp;&nbsp;qq号码：</font><label>11111477</label>
+                            <font for=""> &nbsp;&nbsp;&nbsp;&nbsp;qq号码：</font><label id="qq" runat="server">11111477</label>
                             <hr style="height:0px;border:none;border-top:1px solid #C0C0C0; margin: 10px auto; margin-left: 13px;" />
-                            <font for=""> &nbsp;&nbsp;&nbsp;&nbsp;所在城市：</font> <label>上海</label>
+                            <font for=""> &nbsp;&nbsp;&nbsp;&nbsp;所在城市：</font> <label id="city" runat="server">上海</label>
                             <hr style="height:0px;border:none;border-top:1px solid #C0C0C0; margin: 10px auto; margin-left: 13px;" />
-                            <font for=""> &nbsp;&nbsp;&nbsp;&nbsp;简介：<br /></font><textarea rows="3" style="width: 339px; margin-left: 13px; ">专注于3d模型</textarea>
+                            <font for=""> &nbsp;&nbsp;&nbsp;&nbsp;简介：<br /></font><textarea id="jianjie" rows="3" style="width: 339px; margin-left: 13px; " runat="server">专注于3d模型</textarea>
                         </div>
 
 
@@ -293,6 +297,32 @@
 	             注 &nbsp; 册
 	            </button>--%>
                   <asp:Button ID="Button1" runat="server" class="btn btn-primary" Style="background-color: #333333; margin: 60px 70px 80px 70px; width: 200px; height: 50px;" Text="注  册" OnClick="Register_Click" />
+	         </div>
+	         
+	      </div><!-- /.modal-content -->
+		</div><!-- /.modal -->
+	</div>
+        <div class="modal fade" id="erweima" tabindex="-1" role="dialog"  aria-labelledby="myModalLabel" aria-hidden="true">
+	   <div class="modal-dialog" style="width: 330px;">   
+	      <div class="modal-content">
+	         <div class="modal-header" style="background-color: #101010;">
+	            <button style="color: #FFFFFF; font-size: 21px;" type="button" class="close" 
+	               data-dismiss="modal" aria-hidden="true">
+	                  &times;
+	            </button>
+	            <h4 class="modal-title" id="myModalLabel" style="color: #FFFFFF;">
+	              手机扫二维码分享
+	            </h4>
+	         </div>
+	          <div class="modal-body"  style="height: 200px;">
+                  <img id="erweima1" src="" runat="server"/>
+
+	          </div>
+	      <button type="button" class="btn btn-primary" class="close"
+          data-dismiss="modal" aria-hidden="true" style="background-color: #333333;  margin: 50px 40px 50px 40px; width: 200px;height: 50px;">
+             确  定
+         </button>
+
 	         </div>
 	         
 	      </div><!-- /.modal-content -->
@@ -373,6 +403,7 @@
 	      </div><!-- /.modal-content -->
 		</div><!-- /.modal -->
 	</div>	
+         <script type="text/javascript" src="http://v2.jiathis.com/code/jia.js" charset="utf-8"></script>
          <script>
             $(function () { $('.popover-show').popover('show'); });
             $(function () {
