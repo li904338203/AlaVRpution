@@ -13,5 +13,9 @@ namespace BLL
         {
             return dal.SelectUserDateils(ModerId);
         }
+        public DataSet SelectUserDateilsByuserid(int userid) {
+
+            return dal.SelectUserDateilsByuserid(userid);
+        }
     }
 }

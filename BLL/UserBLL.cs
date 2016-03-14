@@ -27,5 +27,9 @@ namespace BLL
        public DataTable SelectUserName1(string UserName) {
            return dal.SelectUserName1(UserName);
        }
+       public int updateUser(int userid, string city, string iphone, string UserIntroduction, string UserEmil, string qq)
+       {
+           return dal.updateUser( userid,  city,  iphone,  UserIntroduction,  UserEmil, qq);
+       }
     }
 }

@@ -78,6 +78,18 @@ namespace DAL
 
             return dt;
         }
-         
+
+            public int updateUser(int userid, string city, string iphone, string UserIntroduction, string UserEmil,string qq) 
+            {
+                  myData.AddParameter("@userid",userid);
+                  myData.AddParameter("@city", city);
+                  myData.AddParameter("@iphone", iphone);
+                  myData.AddParameter("@UserIntroduction", UserIntroduction);
+                  myData.AddParameter("@UserEmil", UserEmil);
+                  myData.AddParameter("@qq", qq);
+                  string strsql = "update UserDetails set City=@city,TelePhone=@iphone,UserIntroduction=@UserIntroduction where userid=@userid update [User] set UserEmil=@UserEmil,tr1=@qq where UserID = @userid";
+                  int da = myData.ExecuteNonQuery(strsql);
+                  return da;
+            }
     }
 }

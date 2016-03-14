@@ -126,7 +126,7 @@
 	margin: -5px 0 -2px 0;
 }
 .headertwo{
-	top: 57px;
+	top: 50px;
 }
 .headertwo table{
 		width: 10%; 
@@ -143,6 +143,7 @@
 	background-image: url(../img/加载更多底图.png);
 	font-family: "微软雅黑";
 	border: 0px;
+    color:#fff;
     margin:0 auto;
     font-size: 16px;
 }
