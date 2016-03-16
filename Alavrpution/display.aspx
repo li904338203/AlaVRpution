@@ -87,12 +87,13 @@
 				<div class="htdiv2" style="height: 20px;"></div>
 				<div class="row">
 					<div class=" col-sm-8 " >
-						<div class="thumbnail " style="background-color: #F5F5F5; border-color: #F5F5F5;">
+						    <div class="thumbnail " style="background-color: #F5F5F5; border-color: #F5F5F5;">
 							<div class="vss1">
-								<a href="#"><img class="carousel-inner view-first " src="img/作品封面图1.png" alt=""></a>
+								<iframe src="http://120.25.225.139/Production/App/?scene=Production_1&cX=1.0000&cY=11.6000&cZ=11.0015&upX=0.0000&upY=0.0000&upZ=1.0000&tX=1.0000&tY=11.6000&tZ=-28.9000" width="750" height="525" frameborder="0" style="border:0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" onmousewheel=""></iframe>
+
 							</div>
 						<div>
-								<a><span class="glyphicon glyphicon-resize-full aria-hidden="true"" style="top: -35px; right: -95%; color: #FFFFFF;"></span></a>
+								<%--<a><span class="glyphicon glyphicon-resize-full aria-hidden="true"" style="top: -35px; right: -95%; color: #FFFFFF;"></span></a>--%>
 						</div>	
 						<div>
 							<img src="img/收藏.png" /> <font id="shoucang" runat="server">78</font> <img src="img/点击.png" /> <font id="dianji" runat="server">114</font> <button class="zanbtn glyphicon glyphicon-star">  赞</button> 

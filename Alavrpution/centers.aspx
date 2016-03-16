@@ -183,7 +183,7 @@
 		              <%-- <button type="button" class="btn btn-primary" style="background-color: #333333; margin: 60px 70px 80px 70px; width: 200px;height: 50px;">
 		             保 存
 		                </button>--%>
-                         <asp:Button ID="Button3"  class="btn btn-primary" style=s"background-color: #333333; margin: 60px 70px 80px 70px; width: 200px;height: 50px;" runat="server" Text="保 存" OnClick="Button3_Click" />
+                         <asp:Button ID="Button3"  class="btn btn-primary" style="background-color: #333333; margin: 60px 70px 80px 70px; width: 200px;height: 50px;" runat="server" Text="保 存" OnClick="Button3_Click" />
 		             </div>
                       
 		          </div><!-- /.modal-content -->
